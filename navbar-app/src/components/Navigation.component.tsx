@@ -12,16 +12,16 @@ const Navigation = ({ items }: NavigationProps) => {
     const [isToggled, setIsToggled] = useState(true);
     const renderItems = () => items.map((item, index) => (
         <>
-        <li key={index}>
-            {item.url
-                ? <Link to={item.url}>{item.name}</Link>
-                : <span>
-                    {item.name}
-                    <img src='/arrow.svg' alt='arrow' />
-                </span>
-            }
-            {item.children && renderChildren(item.children)}
-        </li>
+            <li key={index}>
+                {item.url
+                    ? <Link to={item.url}>{item.name}</Link>
+                    : <span>
+                        {item.name}
+                        <img src='/arrow.svg' alt='arrow' />
+                    </span>
+                }
+                {item.children && renderChildren(item.children)}
+            </li>
         </>
     ))
 
@@ -44,8 +44,8 @@ const Navigation = ({ items }: NavigationProps) => {
                 <div
                     className={
                         isToggled
-                        ? 'hamburger close'
-                        : 'hamburger'
+                            ? 'hamburger close'
+                            : 'hamburger'
                     }
                     onClick={() => setIsToggled(!isToggled)}
                 >
@@ -56,11 +56,11 @@ const Navigation = ({ items }: NavigationProps) => {
                 </div>
             </div>
             <ul
-            className={[
-                'menu',
-                isToggled && 'active'
-            ].filter(Boolean).join(' ')}
-        >{renderItems()}</ul>
+                className={[
+                    'menu',
+                    isToggled && 'active'
+                ].filter(Boolean).join(' ')}
+            >{renderItems()}</ul>
         </nav>
     )
 }
