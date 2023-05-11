@@ -2,6 +2,7 @@ import React from 'react';
 import { Item } from '../App';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import './Navigation.style.scss'
 
 interface NavigationProps {
     items: Item[];
@@ -11,7 +12,6 @@ const Navigation = ({ items }: NavigationProps) => {
 
     const [isToggled, setIsToggled] = useState(true);
     const renderItems = () => items.map((item, index) => (
-        <>
             <li key={index}>
                 {item.url
                     ? <Link to={item.url}>{item.name}</Link>
@@ -22,7 +22,7 @@ const Navigation = ({ items }: NavigationProps) => {
                 }
                 {item.children && renderChildren(item.children)}
             </li>
-        </>
+        
     ))
 
     const renderChildren = (children: Item[]) => (
@@ -56,10 +56,7 @@ const Navigation = ({ items }: NavigationProps) => {
                 </div>
             </div>
             <ul
-                className={[
-                    'menu',
-                    isToggled && 'active'
-                ].filter(Boolean).join(' ')}
+                className={['menu', isToggled && 'active'].filter(Boolean).join(' ')}
             >{renderItems()}</ul>
         </nav>
     )

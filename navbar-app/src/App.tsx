@@ -11,7 +11,7 @@ interface NameUrl {
 export interface Item {
   name: string;
   url?: string;
-  children?: NameUrl[];
+  children?: Item[];
 }
 
 const items: Item[] = [
@@ -31,7 +31,6 @@ const items: Item[] = [
 function App() {
   return (
     <div className="App">
-      <h1>Test</h1>
       <Navigation items={items} />
     </div>
   )
