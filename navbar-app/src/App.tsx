@@ -9,7 +9,7 @@ export interface Item {
 }
 
 const items: Item[] = [
-  { name: 'Home', url: '/' },
+  { name: 'Home', url: '/home' },
   {
     name: 'Tutorials',
     children: [
@@ -18,7 +18,7 @@ const items: Item[] = [
       { name: 'Advanced', url: '/tutorials/advanced' },
     ],
   },
-  { name: 'About us', url: '/' },
+  { name: 'About us', url: '/about' },
   {
     name: 'Tutorials2',
     children: [
@@ -27,7 +27,7 @@ const items: Item[] = [
       { name: 'Advanced2', url: '/tutorials/advanced' },
     ],
   },
-  { name: 'Contact', url: '/' },
+  { name: 'Contact', url: '/contact' },
 ];
 
 function App() {
