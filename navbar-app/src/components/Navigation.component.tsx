@@ -3,7 +3,9 @@ import { Item } from '../App';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './Navigation.style.scss'
-import { FaAngleDown } from 'react-icons/fa'
+import { FaAngleDown, FaReact } from 'react-icons/fa'
+import { TbBrandTypescript } from 'react-icons/tb'
+
 
 interface NavigationProps {
     items: Item[];
@@ -60,7 +62,9 @@ const Navigation = ({ items }: NavigationProps) => {
     return (
         <nav>
             <div className="container">
-                <div className="logo" />
+                <div className="logo">
+                <FaReact /><span> + </span><TbBrandTypescript/>
+                </div>
                 <div
                     className={
                         isToggled
