@@ -94,3 +94,48 @@ ul {
         max-height: 500px;
     }
 }
+
+.menu li {
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+
+    a:hover {
+        background: #1E86D7;
+    }
+
+    a,
+    span {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 10px 20px;
+        justify-content: space-between;
+    }
+
+    span img {
+        transition: transform .3s ease-in-out;
+    }
+
+    span.toggled {
+        img {
+            transform: rotate(180deg);
+        }
+
+        + .sub-menu {
+            max-height: 500px;
+        }
+    }
+}
+
+.sub-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease-in-out;
+    z-index: 1;
+
+    li a {
+        padding: 10px 40px;
+        font-weight: 400;
+    }
+}

@@ -25,6 +25,14 @@ const items: Item[] = [
     ],
   },
   { name: 'About us', url: '/' },
+  {
+    name: 'Tutorials2',
+    children: [
+      { name: 'Beginner2', url: '/tutorials/beginner' },
+      { name: 'Intermediate2', url: '/tutorials/intermediate' },
+      { name: 'Advanced2', url: '/tutorials/advanced' },
+    ],
+  },
   { name: 'Contact', url: '/' },
 ];
 

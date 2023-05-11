@@ -11,11 +11,16 @@ interface NavigationProps {
 const Navigation = ({ items }: NavigationProps) => {
 
     const [isToggled, setIsToggled] = useState(true);
+
+    const toggleSubMenu = (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
+        event.currentTarget.classList.toggle('toggled');
+    }
+
     const renderItems = () => items.map((item, index) => (
             <li key={index}>
                 {item.url
                     ? <Link to={item.url}>{item.name}</Link>
-                    : <span>
+                    : <span  onClick={toggleSubMenu}>
                         {item.name}
                         <img src='/arrow.svg' alt='arrow' />
                     </span>
