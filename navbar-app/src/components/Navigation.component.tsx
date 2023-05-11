@@ -3,6 +3,7 @@ import { Item } from '../App';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './Navigation.style.scss'
+import { FaAngleDown } from 'react-icons/fa'
 
 interface NavigationProps {
     items: Item[];
@@ -11,36 +12,50 @@ interface NavigationProps {
 const Navigation = ({ items }: NavigationProps) => {
 
     const [isToggled, setIsToggled] = useState(true);
+    const [closeSubMenu, setCloseSubMenu] = useState(false);
+
+    const screenSizes = {
+        small: 720
+    }
 
     const toggleSubMenu = (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
         event.currentTarget.classList.toggle('toggled');
     }
 
     const renderItems = () => items.map((item, index) => (
-            <li key={index}>
-                {item.url
-                    ? <Link to={item.url}>{item.name}</Link>
-                    : <span  onClick={toggleSubMenu}>
-                        {item.name}
-                        <img src='/arrow.svg' alt='arrow' />
-                    </span>
-                }
-                {item.children && renderChildren(item.children)}
-            </li>
-        
+        <li key={index}>
+            {item.url
+                ? <Link to={item.url} onClick={() => closeMenu(true)}>{item.name}</Link>
+                : <span onClick={toggleSubMenu}>
+                    {item.name}
+                    <FaAngleDown className='submenu-dropdown-icon' />
+                </span>
+            }
+            {item.children && renderChildren(item.children)}
+        </li>
+
     ))
 
     const renderChildren = (children: Item[]) => (
         <ul className="sub-menu">
             {children.map((child, index) => (
                 <li key={index}>
-                    <Link to={child.url!}>
+                    <Link to={child.url!} onClick={() => closeMenu(true)}>
                         {child.name}
                     </Link>
                 </li>
             ))}
         </ul>
     )
+
+    const closeMenu = (closeSubMenu = false) => {
+        setIsToggled(false);
+    
+        if (closeSubMenu && window.innerWidth > screenSizes.small) {
+            setCloseSubMenu(true)
+            setTimeout(() => setCloseSubMenu(false), 0)
+        }
+    }
 
     return (
         <nav>
@@ -61,7 +76,7 @@ const Navigation = ({ items }: NavigationProps) => {
                 </div>
             </div>
             <ul
-                className={['menu', isToggled && 'active'].filter(Boolean).join(' ')}
+                className={['menu', isToggled && 'active', closeSubMenu && 'closed'].filter(Boolean).join(' ')}
             >{renderItems()}</ul>
         </nav>
     )

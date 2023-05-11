@@ -2,12 +2,6 @@ import React from 'react';
 import Navigation from './components/Navigation.component';
 import './App.css';
 
-interface NameUrl {
-  name: string;
-  url?: string;
-}
-
-
 export interface Item {
   name: string;
   url?: string;
