@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../button/button.component';
-import circles from '../../assets/MiddleBalls.png';
+// import circles from '../../assets/MiddleBalls.png';
+import circles from '../../assets/MiddleBalls.svg';
 import hero from '../../assets/Hero-homepage.png';
 import balls from '../../assets/Balls.png';
 import './hero.styles.scss';
