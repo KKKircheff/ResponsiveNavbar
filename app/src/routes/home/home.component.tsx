@@ -1,5 +1,7 @@
+import { Hero } from '../../components/hero-section/hero.component'
 import './home.styles.scss'
 import { Outlet } from 'react-router-dom'
+
 
 const Home = () => {
     return (
@@ -8,6 +10,7 @@ const Home = () => {
             <div className='home-page'>
                 <h1>Home</h1>
             </div>
+            <Hero />
         </>
     )
 }

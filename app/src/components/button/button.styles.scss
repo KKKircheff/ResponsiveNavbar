@@ -1,0 +1,106 @@
+@import '../../css-styles/colors.scss';
+@import '../../fonts/tango-sans.scss';
+
+.button-container {
+    min-width: 165px;
+    height: 41px;
+    width: auto;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    padding: 12 38px 12 38px;
+    font-size: 14px;
+    background-color: $color-black;
+    color: $color-white;
+    text-transform: uppercase;
+    // font-family: 'Open Sans Condensed';
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    &:active {
+        background-color: $color-dim-gray;
+        color: $color-white;
+    }
+
+    &.google-sign-in {
+        background-color: $color-imperial-red;
+        color: $color-white;
+
+        &:active {
+            background-color: $color-imperial-red;
+        }
+    }
+
+    &.inverted {
+        background-color: $color-white;
+        color: $color-black;
+        border: 1px solid $color-black;
+
+        &:active {
+            background-color: #272727;
+        }
+    }
+
+
+}
+
+@media (pointer: coarse) {
+    /* mobile device */
+}
+
+@media (pointer: fine),
+(pointer: none) {
+
+    /* desktop */
+    .button-container {
+
+        &:hover {
+            background-color: $color-white;
+            color: $color-black;
+            border: 1px solid $color-black;
+        }
+
+        &:active {
+            background-color: $color-eerie-black;
+            color: $color-white;
+        }
+
+
+        &.google-sign-in {
+            &:hover {
+                background-color: $color-imperial-red;
+                color: $color-white;
+                border: none;
+            }
+
+            &:active {
+                background-color: $color-dim-gray;
+            }
+
+        }
+
+        &.inverted {
+            &:hover {
+                background-color: $color-black;
+                color: $color-white;
+                border: none;
+            }
+
+            &:active {
+                background-color: $color-eerie-black;
+            }
+
+        }
+
+    }
+}
+
+@media only screen and (max-width: 390px) {
+    .button-container {
+        padding: 0 5px 0 5px;
+    }
+}

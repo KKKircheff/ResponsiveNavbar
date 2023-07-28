@@ -1,0 +1,31 @@
+@import '../../css-styles/colors.scss';
+@import '../../fonts/tango-sans.scss';
+
+.hero-homepage {
+    &__card {
+        &__title {
+            color: $color-white;
+            font-family: 'tangoSans', sans-serif;
+            font-size: 50px;
+            font-weight: 400;
+
+            @supports (-moz-appearance: none) {
+                font-weight: 600;
+                /* Specific font weight (700) only for Firefox */
+            }
+        }
+
+        &__text {
+            width: 274px;
+            height: 48px;
+            flex-shrink: 0;
+            color: $color-dim-gray;
+            text-align: center;
+            font-family: Montserrat;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
+}
