@@ -5,6 +5,7 @@ import { useState } from 'react';
 import './Navigation.style.scss'
 import { FaAngleDown, FaReact } from 'react-icons/fa'
 import { TbBrandTypescript } from 'react-icons/tb'
+import logo from '../assets/logo-s.png';
 
 
 interface NavigationProps {
@@ -21,25 +22,30 @@ const Navigation = ({ items }: NavigationProps) => {
     }
 
     const toggleSubMenu = (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
-        event.currentTarget.classList.toggle('toggled');
+        event.currentTarget.classList.toggle('navbar-container__menu-sub-menu--toggled');
     }
 
     const renderItems = () => items.map((item, index) => (
         <li key={index}>
             {item.url
-                ? <Link to={item.url} onClick={() => closeMenu(true)}>{item.name}</Link>
-                : <span onClick={toggleSubMenu}>
+                ? <Link to={item.url} onClick={() => closeMenu(true)}>
                     {item.name}
-                    <FaAngleDown className='submenu-dropdown-icon' />
-                </span>
+                </Link>
+                : <div onClick={toggleSubMenu} className='navbar-container__menu-item'>
+                    <span>
+                        {item.name}
+                        <FaAngleDown className='navbar-container__menu-arrow-icon' />
+                    </span>
+                    {item.children && renderChildren(item.children)}
+                </div>
             }
-            {item.children && renderChildren(item.children)}
+
         </li>
 
     ))
 
     const renderChildren = (children: Item[]) => (
-        <ul className="sub-menu">
+        <ul className="navbar-container__menu-sub-menu navbar-container__menu-sub-menu--toggled">
             {children.map((child, index) => (
                 <li key={index}>
                     <Link to={child.url!} onClick={() => closeMenu(true)}>
@@ -52,7 +58,6 @@ const Navigation = ({ items }: NavigationProps) => {
 
     const closeMenu = (closeSubMenu = false) => {
         setIsToggled(false);
-    
         if (closeSubMenu && window.innerWidth > screenSizes.small) {
             setCloseSubMenu(true)
             setTimeout(() => setCloseSubMenu(false), 0)
@@ -60,27 +65,28 @@ const Navigation = ({ items }: NavigationProps) => {
     }
 
     return (
-        <nav>
-            <div className="container">
-                <div className="logo">
-                <FaReact /><span> + </span><TbBrandTypescript/>
+        <nav className='main-navbar'>
+            <div className="navbar-container">
+                <div className="navbar-container__logo">
+                    <img src={logo} alt="Company logo" />
+                    {/* <FaReact /><span> + </span><TbBrandTypescript /> */}
                 </div>
                 <div
-                    className={
-                        isToggled
-                            ? 'hamburger close'
-                            : 'hamburger'
-                    }
+                    className={`navbar-container__hamburger`}
                     onClick={() => setIsToggled(!isToggled)}
                 >
-                    <span className="burger-bar"></span>
-                    <span className="burger-bar"></span>
-                    <span className="burger-bar"></span>
-                    <span className="burger-bar"></span>
+                    <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-top`}></span>
+                    <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-middle-1`}></span>
+                    <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-middle-2`}></span>
+                    <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-bottom`}></span>
+
                 </div>
             </div>
-            <ul
-                className={['menu', isToggled && 'active', closeSubMenu && 'closed'].filter(Boolean).join(' ')}
+            <ul className={['navbar-container__menu',
+                isToggled && 'navbar-container__menu--active',
+                closeSubMenu && 'navbar-container__menu-sub-menu--toggled',
+            ]
+                .filter(Boolean).join(' ')}
             >{renderItems()}</ul>
         </nav>
     )
