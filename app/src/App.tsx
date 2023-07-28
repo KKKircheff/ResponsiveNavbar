@@ -1,5 +1,11 @@
-import Navigation from './components/Navigation.component';
-import './App.css';
+
+import { Route, Routes } from 'react-router-dom';
+import Navigation from './components/navigation/navigation.component';
+import './App.scss';
+import Home from './routes/home/home.component';
+import { Contact } from './routes/contact/contact.component';
+
+
 
 export interface Item {
     name: string;
@@ -8,32 +14,21 @@ export interface Item {
 }
 
 const items: Item[] = [
-    { name: 'Home', url: '/home' },
-    {
-        name: 'Tutorials',
-        children: [
-            { name: 'Beginner', url: '/tutorials/beginner' },
-            { name: 'Intermediate', url: '/tutorials/intermediate' },
-            { name: 'Advanced', url: '/tutorials/advanced' },
-        ],
-    },
-    { name: 'About us', url: '/about' },
-    {
-        name: 'Tutorials2',
-        children: [
-            { name: 'Beginner2', url: '/tutorials/beginner' },
-            { name: 'Intermediate2', url: '/tutorials/intermediate' },
-            { name: 'Advanced2', url: '/tutorials/advanced' },
-        ],
-    },
+    { name: 'Home', url: '/' },
+    { name: 'About me', url: '/' },
+    { name: 'Memberships', url: '/' },
+    { name: 'Testimonials', url: '/' },
     { name: 'Contact', url: '/contact' },
 ];
 
 function App() {
     return (
-        <div className="App">
-            <Navigation items={items} />
-        </div>
+        <Routes>
+            <Route path='/' element={<Navigation items={items} />}>
+                <Route index element={<Home />} />
+                <Route path='/contact' element={<Contact />} />
+            </Route>
+        </Routes>
     )
 }
 

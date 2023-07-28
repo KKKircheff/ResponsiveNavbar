@@ -1,11 +1,10 @@
 import React from 'react';
-import { Item } from '../App';
-import { Link } from 'react-router-dom';
+import { Item } from '../../App';
+import { Link, Outlet } from 'react-router-dom';
 import { useState } from 'react';
-import './Navigation.style.scss'
-import { FaAngleDown, FaReact } from 'react-icons/fa'
-import { TbBrandTypescript } from 'react-icons/tb'
-import logo from '../assets/logo-s.png';
+import './navigation.style.scss'
+import { FaAngleDown } from 'react-icons/fa'
+import logo from '../../assets/logo-s.png';
 
 
 interface NavigationProps {
@@ -14,7 +13,7 @@ interface NavigationProps {
 
 const Navigation = ({ items }: NavigationProps) => {
 
-    const [isToggled, setIsToggled] = useState(true);
+    const [isToggled, setIsToggled] = useState(false);
     const [closeSubMenu, setCloseSubMenu] = useState(false);
 
     const screenSizes = {
@@ -65,30 +64,33 @@ const Navigation = ({ items }: NavigationProps) => {
     }
 
     return (
-        <nav className='main-navbar'>
-            <div className="navbar-container">
-                <div className="navbar-container__logo">
-                    <img src={logo} alt="Company logo" />
-                    {/* <FaReact /><span> + </span><TbBrandTypescript /> */}
-                </div>
-                <div
-                    className={`navbar-container__hamburger`}
-                    onClick={() => setIsToggled(!isToggled)}
-                >
-                    <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-top`}></span>
-                    <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-middle-1`}></span>
-                    <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-middle-2`}></span>
-                    <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-bottom`}></span>
+        <>
+            <nav className='main-navbar'>
+                <div className="navbar-container">
+                    <div className="navbar-container__logo">
+                        <img src={logo} alt="Company logo" />
+                        {/* <FaReact /><span> + </span><TbBrandTypescript /> */}
+                    </div>
+                    <div
+                        className={`navbar-container__hamburger`}
+                        onClick={() => setIsToggled(!isToggled)}
+                    >
+                        <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-top`}></span>
+                        <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-middle-1`}></span>
+                        <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-middle-2`}></span>
+                        <span className={`navbar-container__hamburger-burger-bar navbar-container__hamburger${isToggled ? '--close' : ''}-burger-bar-bottom`}></span>
 
+                    </div>
                 </div>
-            </div>
-            <ul className={['navbar-container__menu',
-                isToggled && 'navbar-container__menu--active',
-                closeSubMenu && 'navbar-container__menu-sub-menu--toggled',
-            ]
-                .filter(Boolean).join(' ')}
-            >{renderItems()}</ul>
-        </nav>
+                <ul className={['navbar-container__menu',
+                    isToggled && 'navbar-container__menu--active',
+                    closeSubMenu && 'navbar-container__menu-sub-menu--toggled',
+                ]
+                    .filter(Boolean).join(' ')}
+                >{renderItems()}</ul>
+            </nav>
+            <Outlet />
+        </>
     )
 }
 

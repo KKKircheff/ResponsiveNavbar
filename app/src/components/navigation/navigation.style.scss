@@ -1,8 +1,9 @@
-@import '../css-styles/colors.scss';
+@import '../../css-styles/colors.scss';
+@import '../../fonts/montserat.scss';
 
 .main-navbar {
+    font-family: 'Montserrat', sans-serif;
     background: $color-black;
-    // background: radial-gradient(ellipse at center bottom, rgba(27, 149, 237, 1) 0%, rgba(27, 87, 153, 1) 100%);
     display: flex;
     flex-direction: column;
 
@@ -110,13 +111,13 @@
 
         &--active {
             max-height: 500px;
-
         }
 
         li {
             font-weight: 500;
             cursor: pointer;
             position: relative;
+            margin-left: 25px;
 
             a,
             span {
