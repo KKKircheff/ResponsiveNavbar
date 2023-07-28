@@ -8,18 +8,18 @@
     border-radius: 8px;
     letter-spacing: 0.5px;
     line-height: 40px;
-    padding: 12 38px 12 38px;
-    font-size: 14px;
+    padding: 0 38px 0 38px;
+    font-size: 12px;
     background-color: $color-black;
     color: $color-white;
-    text-transform: uppercase;
-    // font-family: 'Open Sans Condensed';
+    // text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
-    border: none;
+    border: 1px solid $color-white;
     cursor: pointer;
     display: flex;
     justify-content: center;
+    transition: all .05s;
 
     &:active {
         background-color: $color-dim-gray;
@@ -31,7 +31,7 @@
         color: $color-white;
 
         &:active {
-            background-color: $color-imperial-red;
+            background-color: $color-white;
         }
     }
 
@@ -41,23 +41,15 @@
         border: 1px solid $color-black;
 
         &:active {
-            background-color: #272727;
+            background-color: $color-eerie-black;
         }
     }
 
 
 }
 
-@media (pointer: coarse) {
-    /* mobile device */
-}
-
-@media (pointer: fine),
-(pointer: none) {
-
-    /* desktop */
+@media only screen and (min-width: 720px) {
     .button-container {
-
         &:hover {
             background-color: $color-white;
             color: $color-black;
@@ -65,20 +57,20 @@
         }
 
         &:active {
-            background-color: $color-eerie-black;
+            background-color: $color-dim-gray;
             color: $color-white;
         }
 
 
         &.google-sign-in {
             &:hover {
-                background-color: $color-imperial-red;
+                background-color: $color-imperial-dark-red;
                 color: $color-white;
-                border: none;
+                border: 1px solid $color-white;
             }
 
             &:active {
-                background-color: $color-dim-gray;
+                background-color: $color-imperial-red;
             }
 
         }
@@ -87,17 +79,20 @@
             &:hover {
                 background-color: $color-black;
                 color: $color-white;
-                border: none;
+                border: 1px solid $color-dim-gray;
             }
 
             &:active {
-                background-color: $color-eerie-black;
+                background-color: $color-dim-gray;
             }
 
         }
 
     }
 }
+
+
+
 
 @media only screen and (max-width: 390px) {
     .button-container {

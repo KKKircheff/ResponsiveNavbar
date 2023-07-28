@@ -2,11 +2,52 @@
 @import '../../fonts/tango-sans.scss';
 
 .hero-homepage {
+    display: flex;
+    flex-direction: column;
+
+    &__images {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        &__hero {
+            position: relative;
+            z-index: 1;
+            width: 80vw;
+            margin-left: 15vw;
+
+            img {
+                object-fit: cover;
+            }
+        }
+
+        &__circles {
+            position: absolute;
+            top: 0;
+            left: 20vw;
+            width: 100vw;
+
+            img {
+                width: 60vw;
+                object-fit: contain;
+                max-height: 600px;
+            }
+        }
+    }
+
     &__card {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vw;
+
         &__title {
             color: $color-white;
             font-family: 'tangoSans', sans-serif;
-            font-size: 50px;
+            font-size: calc(20px + 8vw);
             font-weight: 400;
 
             @supports (-moz-appearance: none) {
@@ -16,16 +57,63 @@
         }
 
         &__text {
-            width: 274px;
+            width: calc(120px + 45vw);
             height: 48px;
             flex-shrink: 0;
-            color: $color-dim-gray;
+            color: $color-white;
             text-align: center;
             font-family: Montserrat;
-            font-size: 16px;
+            font-size: calc(5px + 2.8vw);
             font-style: normal;
-            font-weight: 500;
+            font-weight: 400;
             line-height: normal;
+            margin-bottom: calc(6px + 4vw);
+        }
+    }
+}
+
+@media only screen and (min-width: 720px) {
+
+    .hero-homepage {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 10vw;
+
+        &__images {
+            width: 40vw;
+
+            &__hero {
+                max-width: 50vw;
+                height: 600px;
+            }
+
+            &__circles {
+                top: 0;
+                left: 0;
+                height: 600px;
+                max-width: 50vw;
+            }
+        }
+
+        &__card {
+            align-items: start;
+            width: 35vw;
+            text-align: left;
+            height: 30vw;
+
+
+            &__title {
+                font-size: calc(20px + 4vw);
+            }
+
+            &__text {
+                text-align: left;
+                font-size: calc(5px + 1vw);
+                width: 30vw;
+            }
+
         }
     }
 }
