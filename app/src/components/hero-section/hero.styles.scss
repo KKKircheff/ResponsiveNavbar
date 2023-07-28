@@ -76,7 +76,6 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        flex: auto;
         overflow-x: hidden;
 
         &__images {
@@ -86,24 +85,22 @@
 
             &__hero {
                 width: 50vw;
-
                 margin-left: 60vw;
-
 
                 img {
                     margin-left: -350px;
-                    height: 74.5vh;
+                    height: 453px;
                 }
             }
 
             &__circles {
                 top: 0;
-                left: -100px;
+                left: -200px;
 
                 img {
                     width: 100vw;
                     object-fit: contain;
-                    height: 65vh;
+                    height: 453px;
                 }
             }
         }
@@ -118,13 +115,15 @@
 
 
             &__title {
-                font-size: calc(20px + 4vw);
+                font-size: calc(20px + 3.2vw);
             }
 
             &__text {
                 text-align: left;
                 font-size: calc(5px + 1vw);
                 width: 30vw;
+                margin-bottom: calc(4px + 1vw);
+                padding-left: 1px;
             }
 
         }
@@ -136,14 +135,23 @@
         &__images {
             &__hero {
                 img {
-                    height: 81.3vh;
+                    margin-left: -400px;
+                    height: 600px;
                 }
             }
 
             &__circles {
                 img {
-                    height: 90vh;
+                    height: 600px;
+                    margin-left: 50px;
+
                 }
+            }
+        }
+
+        &__card {
+            &__text {
+                margin-bottom: calc(6px + 2vw);
             }
         }
     }
