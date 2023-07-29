@@ -1,0 +1,48 @@
+@import '../../css-styles/colors.scss';
+@import '../../fonts/tango-sans.scss';
+
+.memberships-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0;
+
+    &__title {
+        color: $color-white;
+        font-family: 'tangoSans', sans-serif;
+        margin: 30px 0;
+        padding-left: 20px;
+        font-size: 25px;
+        font-weight: 400;
+        text-align: center;
+        width: 70vw;
+    }
+
+    &__tiers {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+    .memberships-container {
+        padding: 90px;
+
+
+        &__title {
+            width: 700px;
+            font-size: 45px;
+            padding: 60px 0;
+
+        }
+
+        &__tiers {
+            display: flex;
+            flex-direction: row;
+            gap: 30px;
+            justify-content: center;
+        }
+    }
+}

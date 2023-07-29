@@ -16,7 +16,6 @@ type Props = {
 export const Button = ({ children, buttonType, ...otherProps }: Props) => {
     return (
         <button className={`button-container ${buttonType}`} {...otherProps}>
-
             {children}
         </button>
     )
