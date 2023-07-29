@@ -4,6 +4,7 @@ import background from '../../assets/testimonialsCircles.svg';
 import { AiOutlineInstagram, AiOutlineMail } from 'react-icons/ai';
 import { FaSquareFacebook, FaSquareYoutube } from 'react-icons/fa6';
 import { BsTelephone, BsTelegram } from 'react-icons/bs';
+import { TestimonialCard } from '../testimonial-card/testimonial-card.component';
 
 
 export const Footer = () => {
@@ -27,11 +28,20 @@ export const Footer = () => {
     }, []);
     return (
         <div className='footer'>
+
             <div className="footer__contact" style={{
                 backgroundImage: `url(${background})`,
                 backgroundRepeat: `no-repeat`,
                 // backgroundColor: `#cccccc`
             }} >
+                <h1 className="footer__contact__testimonials-title">
+                    Testimonials
+                </h1>
+                <div className="footer__contact__testimonials">
+                    <TestimonialCard />
+                    <TestimonialCard />
+                    <TestimonialCard />
+                </div>
                 <div className="footer__contact-text">
                     <h1>Contact</h1>
                     <p>Get in touch with me</p>
