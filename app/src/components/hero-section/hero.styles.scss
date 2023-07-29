@@ -4,33 +4,13 @@
 .hero-homepage {
     display: flex;
     flex-direction: column;
+    background-position: center bottom;
+    background-size: 70vw;
 
-    &__images {
-        position: relative;
-
-        &__hero {
-            position: relative;
-            z-index: 1;
-            width: 80vw;
-            margin-left: 15vw;
-
-            img {
-                object-fit: cover;
-            }
-        }
-
-        &__circles {
-            position: absolute;
-            top: 0;
-            left: 20vw;
-            width: 100vw;
-
-            img {
-                width: 60vw;
-                object-fit: contain;
-                max-height: 600px;
-            }
-        }
+    &__image {
+        margin-top: 35px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__card {
@@ -76,34 +56,15 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        overflow-x: hidden;
-
-        &__images {
-            top: 0;
-            right: 0;
-            width: 100vw;
-
-            &__hero {
-                width: 50vw;
-                margin-left: 60vw;
-
-                img {
-                    margin-left: -350px;
-                    height: 453px;
-                }
-            }
-
-            &__circles {
-                top: 0;
-                left: -200px;
+        overflow: hidden;
+        background-position: right;
+        background-size: contain;
+        height: 500px;
 
 
-                img {
-                    width: 100vw;
-                    object-fit: contain;
-                    height: 453px;
-                }
-            }
+        &__image {
+            margin: 0;
+            width: 385px
         }
 
         &__card {
@@ -133,21 +94,12 @@
 
 @media only screen and (min-width: 960px) {
     .hero-homepage {
-        &__images {
-            &__hero {
-                img {
-                    margin-left: -400px;
-                    height: 600px;
-                }
-            }
+        height: 620px;
+        padding-right: 30px;
 
-            &__circles {
-                img {
-                    height: 600px;
-                    margin-left: 50px;
-
-                }
-            }
+        &__image {
+            margin: 0;
+            width: 500px
         }
 
         &__card {

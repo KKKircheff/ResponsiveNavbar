@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '../button/button.component';
 // import circles from '../../assets/MiddleBalls.png';
 import circles from '../../assets/MiddleBalls.svg';
-import hero from '../../assets/Hero-homepage.png';
+import hero from '../../assets/Hero-homepage-1.png';
 import balls from '../../assets/Balls.png';
 import './hero.styles.scss';
 
@@ -30,8 +30,14 @@ export const Hero = () => {
         console.log('Get started;');
     };
 
+    const background = isLargeScreen ? circles : balls
+
     return (
-        <div className="hero-homepage">
+        <div className="hero-homepage"
+            style={{
+                backgroundImage: `url(${background})`,
+                backgroundRepeat: `no-repeat`,
+            }}>
             <div className="hero-homepage__card">
                 <h2 className="hero-homepage__card__title">GET FIT</h2>
 
@@ -44,17 +50,8 @@ export const Hero = () => {
                 </div>
             </div>
 
-            <div className="hero-homepage__images">
-                <div className="hero-homepage__images__hero">
-                    <img src={hero} alt="" />
-                </div>
-                <div className="hero-homepage__images__circles">
-                    {isLargeScreen
-                        ? <img src={circles} alt="" />
-                        : <img src={balls} alt="" />
-                    }
-
-                </div>
+            <div className="hero-homepage__image">
+                <img src={hero} alt="" />
             </div>
         </div>
     );
