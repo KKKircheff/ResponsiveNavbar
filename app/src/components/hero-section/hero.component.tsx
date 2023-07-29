@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '../button/button.component';
 // import circles from '../../assets/MiddleBalls.png';
 import circles from '../../assets/MiddleBalls.svg';
-import hero from '../../assets/Hero-homepage-1.png';
+import hero from '../../assets/Hero-homepage.png';
 import balls from '../../assets/Balls.png';
 import './hero.styles.scss';
 
@@ -11,7 +11,7 @@ export const Hero = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsLargeScreen(window.innerWidth > 720);
+            setIsLargeScreen(window.innerWidth >= 720);
         };
 
         // Add event listener for window resize

@@ -60,9 +60,9 @@
             }
 
             p {
-                color: $color-white-dim;
+                color: $color-battleship-gray;
                 font-size: 10px;
-                font-weight: 400;
+                font-weight: 500;
                 width: 110px;
             }
 
@@ -95,7 +95,6 @@
                 font-size: 13px;
                 font-weight: 500;
                 line-height: 1.5rem;
-
             }
 
             ul {
@@ -124,4 +123,108 @@
         text-align: center;
         padding-bottom: 8px;
     }
+}
+
+@media only screen and (min-width: 720px) {
+    .footer {
+        &__contact {
+            padding-left: 50px;
+
+            &-text {
+                h1 {
+                    font-size: 45px;
+                    line-height: 3rem;
+                }
+
+                p {
+                    color: $color-dim-gray;
+                    font-size: 22px;
+                    font-weight: 500;
+                }
+            }
+
+            &-details {
+                line-height: 2.5rem;
+                font-size: 20px;
+                font-weight: 500;
+
+                &__span {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 16px;
+                }
+
+            }
+        }
+
+        &__block {
+            padding-left: 50px;
+            padding-right: 50px;
+
+            &__quote {
+
+                h1 {
+                    font-size: 27px;
+                    line-height: 3.5rem;
+                }
+
+                p {
+                    font-size: 17px;
+                    width: 420px;
+                    line-height: 1.3rem;
+                }
+
+                &__icons {
+                    margin-top: 40px;
+                    font-size: 1.8rem;
+                    gap: 30px;
+
+                    a {
+                        color: $color-white;
+
+                        &:first-child {
+                            margin-top: 4px;
+                            font-size: 2.2rem;
+                        }
+
+                    }
+                }
+            }
+
+            &__links {
+                text-align: left;
+
+                h1 {
+                    font-size: 27px;
+                    font-weight: 400;
+                    line-height: 3.5rem;
+                }
+
+                ul {
+                    padding-left: 0;
+
+                    li {
+                        font-size: 20px;
+                        line-height: 3.2rem;
+                        font-weight: 500;
+
+                        a {
+                            &:hover {
+                                color: $color-white;
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+
+        &__copyright {
+            font-size: 22px;
+            padding-bottom: 8px;
+        }
+    }
+
 }

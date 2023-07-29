@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import './footer.styles.scss'
 import background from '../../assets/testimonialsCircles.svg';
 import { AiOutlineInstagram, AiOutlineMail } from 'react-icons/ai';
@@ -6,6 +7,24 @@ import { BsTelephone, BsTelegram } from 'react-icons/bs';
 
 
 export const Footer = () => {
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsLargeScreen(window.innerWidth >= 720);
+        };
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Call handleResize to set initial value
+        handleResize();
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
     return (
         <div className='footer'>
             <div className="footer__contact" style={{
@@ -28,7 +47,11 @@ export const Footer = () => {
 
                 <div className="footer__block__quote">
                     <h1>Get Fit</h1>
-                    <p>Transform your body and unlock your fitness potential</p>
+                    {isLargeScreen
+                        ? <p>Transform your body and unlock your fitness potential with personalized training programs, expert guidance, and unwavering support from Sohil, your trusted personal trainer.</p>
+                        : <p>Transform your body and unlock your fitness potential</p>
+                    }
+
                     <div className="footer__block__quote__icons">
                         <a href="#"><AiOutlineInstagram /></a>
                         <a href="#"><FaSquareFacebook /></a>
