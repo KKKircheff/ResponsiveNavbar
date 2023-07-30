@@ -24,7 +24,14 @@
         gap: 30px;
         align-items: center;
     }
+
+    &__mobile {
+        margin-top: 50px;
+        width: 270px;
+        height: 413px;
+    }
 }
+
 
 @media only screen and (min-width: 920px) {
     .memberships-container {
@@ -45,4 +52,8 @@
             justify-content: center;
         }
     }
+}
+
+.test {
+    color: red;
 }

@@ -247,12 +247,18 @@
 
 @media only screen and (min-width: 960px) {
     .footer {
+
         &__contact {
+
             &__testimonials {
                 flex-direction: row;
                 justify-content: space-evenly;
                 margin: 80px 0;
                 gap: 20px;
+            }
+
+            &__testimonials-title {
+                font-size: 45px;
             }
         }
     }
