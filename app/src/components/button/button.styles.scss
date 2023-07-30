@@ -19,7 +19,10 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
+    align-items: center;
     transition: all .05s;
+    gap: 10px;
+
 
     &:active {
         background-color: $color-dim-gray;
