@@ -1,4 +1,5 @@
 import { AboutMeCard } from '../../components/about-me-card/about-me-card.component'
+import { AboutMeSection } from '../../components/about-me-section/about-me-section.component'
 import { Footer } from '../../components/footer/footer.component'
 import { Hero } from '../../components/hero-section/hero.component'
 import { MembershipsContainer } from '../../components/memberships-container/memberships-container.component'
@@ -11,7 +12,7 @@ const Home = () => {
         <>
             <Outlet />
             <Hero />
-            <AboutMeCard />
+            <AboutMeSection />
             <MembershipsContainer />
             <Footer />
         </>

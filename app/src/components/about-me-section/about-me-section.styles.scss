@@ -1,0 +1,22 @@
+@import '../../css-styles/colors.scss';
+@import '../../fonts/tango-sans.scss';
+
+.about-me-section {
+    height: 650px;
+    background-position: bottom center;
+
+    &__slider {
+        color: $color-white;
+    }
+}
+
+@media only screen and (min-width: 920px) {
+
+    .about-me-section {
+        // background-size: contain;
+        padding: 40px 20px 40px 20px;
+        padding-left: calc(32vw - 280px);
+        background-position: 90% center;
+        height: 650px;
+    }
+}
