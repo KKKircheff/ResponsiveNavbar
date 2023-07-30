@@ -7,6 +7,9 @@ import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
+import rightArrow from '../../assets/rightArrow.svg'
+import leftArrow from '../../assets/leftArrow.svg'
+
 export const MembershipsContainer = () => {
     const settings = {
         dots: false,
@@ -16,6 +19,18 @@ export const MembershipsContainer = () => {
         slidesToScroll: 1,
         autoplay: false,
         arrows: true,
+        nextArrow: (
+            <div>
+                {/* <div className="next-slick-arrow"> ⫸ </div> */}
+                <div className="next-slick-arrow"> <img src={leftArrow} alt="" /> </div>
+            </div>
+        ),
+        prevArrow: (
+            <div>
+                {/* <div className="prev-slick-arrow"> ⫷ </div> */}
+                <div className="prev-slick-arrow"> <img src={rightArrow} alt="" /> </div>
+            </div>
+        ),
         // autoplaySpeed: 1000,
     };
 

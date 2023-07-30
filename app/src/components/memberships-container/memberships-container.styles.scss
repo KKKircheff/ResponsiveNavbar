@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 0;
+    margin: 50px 0;
 
     &__title {
         color: $color-white;
@@ -35,7 +35,8 @@
 
 @media only screen and (min-width: 920px) {
     .memberships-container {
-        padding: 90px;
+        padding: 10px;
+        margin-top: 10px;
 
 
         &__title {
@@ -46,14 +47,42 @@
         }
 
         &__tiers {
+            width: 100%;
             display: flex;
+            // flex-direction: row;
+            // gap: 30px;
+            // justify-content: center;
             flex-direction: row;
-            gap: 30px;
-            justify-content: center;
+            justify-content: space-evenly;
+            margin: 80px 0;
+            gap: 20px;
         }
+
     }
 }
 
-.test {
-    color: red;
+.slick-prev {
+    top: 203px;
+    left: -35px !important;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-next {
+    left: 283px !important;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-next:before,
+.slick-prev:before {
+    content: "" !important;
+}
+
+.next-slick-arrow,
+.prev-slick-arrow {
+    color: white;
+    font-size: 45px;
 }
