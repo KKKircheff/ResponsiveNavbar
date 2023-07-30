@@ -1,0 +1,35 @@
+@import '../../css-styles/colors.scss';
+@import '../../fonts/tango-sans.scss';
+
+.about-me-slider {
+    padding-top: 110px;
+
+    &__separator {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+        margin: 5px 0 10px 0;
+
+    }
+
+    &__separator-dash {
+        width: 45px;
+        height: 1.5px;
+    }
+
+    &__title {
+        font-size: 20px;
+        color: $color-battleship-gray;
+        font-weight: 500;
+
+    }
+
+    &__content {
+        width: 230px;
+        color: $color-dim-gray;
+        font-size: 14px;
+    }
+
+
+}

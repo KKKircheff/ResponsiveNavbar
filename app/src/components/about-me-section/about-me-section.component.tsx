@@ -3,6 +3,25 @@ import './about-me-section.styles.scss'
 import { useEffect, useState } from 'react';
 import heroRight from '../../assets/HeroRight.png'
 import heroRightMobile from '../../assets/HeroRightmobile.png'
+import { AboutMeSlider } from '../about-me-slider/about-me-slider.component';
+const infoCards = [
+    {
+        title: 'Experience',
+        content: 'Over 6 years of hands-on experience in the fitness and bodywork industry.'
+    },
+    {
+        title: 'Style',
+        content: 'Unique and innovative techniques that stimulate your neurological side.',
+    },
+    {
+        title: 'Nutrition',
+        content: 'Help increase bioavailability in your food and help establish a relationship with your food.',
+    },
+    {
+        title: 'About me',
+        content: 'Outgoing and always passionate about the things I love.',
+    },
+]
 
 export const AboutMeSection = () => {
     const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -36,10 +55,9 @@ export const AboutMeSection = () => {
                     <AboutMeCard />
                 </div>
                 : <div className='about-me-section__slider'>
-                    <h1>This is mobile slider section</h1>
+                    <AboutMeSlider slides={infoCards} />
                 </div>
             }
-
         </div>
     )
 }
