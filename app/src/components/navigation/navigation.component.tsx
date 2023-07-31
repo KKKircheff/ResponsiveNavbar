@@ -1,6 +1,7 @@
 import React from 'react';
 import { Item } from '../../application-data/navbar-config'
 import { Outlet } from 'react-router-dom';
+import { Link as LinkNav } from 'react-router-dom';
 import { useState } from 'react';
 import './navigation.style.scss'
 import { FaAngleDown } from 'react-icons/fa'
@@ -10,9 +11,11 @@ import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } f
 
 interface NavigationProps {
     items: Item[];
+    isContactActive: boolean,
+    setIsContactActive: (newValue: boolean) => void;
 }
 
-const Navigation = ({ items }: NavigationProps) => {
+const Navigation = ({ items, isContactActive, setIsContactActive }: NavigationProps) => {
 
     const [isToggled, setIsToggled] = useState(false);
     const [closeSubMenu, setCloseSubMenu] = useState(false);
@@ -35,9 +38,11 @@ const Navigation = ({ items }: NavigationProps) => {
                     smooth={true}
                     offset={item.offset}
                     duration={index * 400}
-                    onClick={() => closeMenu(true)}
+                    onClick={() => {
+                        closeMenu(true);
+                        setIsContactActive(false)
+                    }}
                 >
-
                     {item.name}
                 </Link>
                 : <div onClick={toggleSubMenu} className='navbar-container__menu-item'>
@@ -97,7 +102,24 @@ const Navigation = ({ items }: NavigationProps) => {
                     closeSubMenu && 'navbar-container__menu-sub-menu--toggled',
                 ]
                     .filter(Boolean).join(' ')}
-                >{renderItems()}</ul>
+                >{renderItems()}
+                    <li>
+                        <Link
+                            activeClass="active"
+                            to={'footer__contact-text'}
+                            spy={false}
+                            smooth={true}
+                            offset={-100}
+                            duration={1600}
+                            onClick={() => {
+                                closeMenu(true);
+                                setIsContactActive(true)
+                            }}
+                        >
+                            {'Contact'}
+                        </Link>
+                    </li>
+                </ul>
             </nav>
             <Outlet />
         </>

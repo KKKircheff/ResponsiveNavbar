@@ -5,6 +5,7 @@ type otherProps = {
     disabled?: boolean;
     className?: string;
     style?: React.CSSProperties;
+    type?: 'submit';
 }
 
 type Props = {

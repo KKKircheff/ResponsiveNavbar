@@ -6,10 +6,15 @@ import { FaSquareFacebook, FaSquareYoutube } from 'react-icons/fa6';
 import { BsTelephone, BsTelegram } from 'react-icons/bs';
 import { TestimonialCard } from '../testimonial-card/testimonial-card.component';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import { ContactForm } from '../../components/contact-form/contact-form.component'
+
+type Props = {
+    isContactActive: boolean,
+    setIsContactActive: (newValue: boolean) => void;
+}
 
 
-
-export const Footer = () => {
+export const Footer = ({ isContactActive, setIsContactActive }: Props) => {
     const [isLargeScreen, setIsLargeScreen] = useState(false);
 
     useEffect(() => {
@@ -44,6 +49,7 @@ export const Footer = () => {
                     <TestimonialCard />
                     <TestimonialCard />
                 </div>
+                {isContactActive && <ContactForm isContactActive={isContactActive} setIsContactActive={setIsContactActive} />}
                 <div className="footer__contact-text">
                     <h1>Contact</h1>
                     <p>Get in touch with me</p>
@@ -82,6 +88,7 @@ export const Footer = () => {
                                     spy={false}
                                     smooth={true}
                                     duration={1500}
+                                    onClick={() => setIsContactActive(false)}
                                 >
                                     About me
                                 </Link>
@@ -95,6 +102,7 @@ export const Footer = () => {
                                     spy={false}
                                     smooth={true}
                                     duration={1000}
+                                    onClick={() => setIsContactActive(false)}
                                 >
                                     Membership
                                 </Link>
@@ -108,6 +116,8 @@ export const Footer = () => {
                                     spy={false}
                                     smooth={true}
                                     duration={500}
+                                    onClick={() => setIsContactActive(false)}
+
                                 >
                                     Testimonials
                                 </Link>
@@ -121,6 +131,7 @@ export const Footer = () => {
                                     spy={false}
                                     smooth={true}
                                     duration={800}
+                                    onClick={() => setIsContactActive(true)}
                                 >
                                     Contact
                                 </Link>

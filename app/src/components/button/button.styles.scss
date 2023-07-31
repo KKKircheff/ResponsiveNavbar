@@ -10,7 +10,7 @@
     line-height: 40px;
     padding: 0 38px 0 38px;
     font-size: 12px;
-    background-color: $color-black;
+    background-color: $color-black-background;
     color: $color-white;
     // text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
@@ -40,8 +40,8 @@
 
     &.inverted {
         background-color: $color-white;
-        color: $color-black;
-        border: 1px solid $color-black;
+        color: $color-black-background;
+        border: 1px solid $color-black-background;
 
         &:active {
             background-color: $color-eerie-black;
@@ -55,8 +55,8 @@
     .button-container {
         &:hover {
             background-color: $color-white;
-            color: $color-black;
-            border: 1px solid $color-black;
+            color: $color-black-background;
+            border: 1px solid $color-black-background;
         }
 
         &:active {
@@ -80,7 +80,7 @@
 
         &.inverted {
             &:hover {
-                background-color: $color-black;
+                background-color: $color-black-background;
                 color: $color-white;
                 border: 1px solid $color-dim-gray;
             }
