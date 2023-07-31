@@ -34,7 +34,7 @@ const Navigation = ({ items }: NavigationProps) => {
                     spy={false}
                     smooth={true}
                     offset={item.offset}
-                    duration={1500}
+                    duration={index * 400}
                     onClick={() => closeMenu(true)}
                 >
 

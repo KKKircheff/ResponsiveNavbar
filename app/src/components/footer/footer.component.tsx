@@ -81,9 +81,7 @@ export const Footer = () => {
                                     to={'about-me-section'}
                                     spy={false}
                                     smooth={true}
-                                    // offset={item.offset}
                                     duration={1500}
-                                // onClick={() => closeMenu(true)}
                                 >
                                     About me
                                 </Link>
@@ -96,9 +94,7 @@ export const Footer = () => {
                                     to={'memberships-container'}
                                     spy={false}
                                     smooth={true}
-                                    // offset={item.offset}
-                                    duration={1500}
-                                // onClick={() => closeMenu(true)}
+                                    duration={1000}
                                 >
                                     Membership
                                 </Link>
@@ -111,9 +107,7 @@ export const Footer = () => {
                                     to={'footer__contact__testimonials-title'}
                                     spy={false}
                                     smooth={true}
-                                    // offset={item.offset}
-                                    duration={1500}
-                                // onClick={() => closeMenu(true)}
+                                    duration={500}
                                 >
                                     Testimonials
                                 </Link>
@@ -126,9 +120,7 @@ export const Footer = () => {
                                     to={'footer__contact-text'}
                                     spy={false}
                                     smooth={true}
-                                    // offset={item.offset}
-                                    duration={1500}
-                                // onClick={() => closeMenu(true)}
+                                    duration={800}
                                 >
                                     Contact
                                 </Link>
