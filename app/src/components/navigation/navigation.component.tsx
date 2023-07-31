@@ -1,10 +1,11 @@
 import React from 'react';
-import { Item } from '../../App';
-import { Link, Outlet } from 'react-router-dom';
+import { Item } from '../../application-data/navbar-config'
+import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import './navigation.style.scss'
 import { FaAngleDown } from 'react-icons/fa'
 import logo from '../../assets/logo-s.png';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 
 interface NavigationProps {
@@ -27,7 +28,16 @@ const Navigation = ({ items }: NavigationProps) => {
     const renderItems = () => items.map((item, index) => (
         <li key={index}>
             {item.url
-                ? <Link to={item.url} onClick={() => closeMenu(true)}>
+                ? <Link
+                    activeClass="active"
+                    to={item.url}
+                    spy={false}
+                    smooth={true}
+                    offset={item.offset}
+                    duration={1500}
+                    onClick={() => closeMenu(true)}
+                >
+
                     {item.name}
                 </Link>
                 : <div onClick={toggleSubMenu} className='navbar-container__menu-item'>
