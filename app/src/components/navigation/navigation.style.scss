@@ -199,11 +199,13 @@
             overflow: visible;
             gap: 0px;
             background-color: transparent;
+            z-index: 5;
 
             li {
 
                 a,
                 span {
+                    z-index: 5;
                     white-space: nowrap;
                     padding: 5px 0;
                     color: $color-white;

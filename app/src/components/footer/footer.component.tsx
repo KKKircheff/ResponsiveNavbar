@@ -5,6 +5,8 @@ import { AiOutlineInstagram, AiOutlineMail } from 'react-icons/ai';
 import { FaSquareFacebook, FaSquareYoutube } from 'react-icons/fa6';
 import { BsTelephone, BsTelegram } from 'react-icons/bs';
 import { TestimonialCard } from '../testimonial-card/testimonial-card.component';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 
 export const Footer = () => {
@@ -73,16 +75,64 @@ export const Footer = () => {
                     <h1>XSOFIT</h1>
                     <ul>
                         <li>
-                            <a href="#">About me </a>
+                            <a href="">
+                                <Link
+                                    activeClass="active"
+                                    to={'about-me-section'}
+                                    spy={false}
+                                    smooth={true}
+                                    // offset={item.offset}
+                                    duration={1500}
+                                // onClick={() => closeMenu(true)}
+                                >
+                                    About me
+                                </Link>
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Membership</a>
+                            <a href="">
+                                <Link
+                                    activeClass="active"
+                                    to={'memberships-container'}
+                                    spy={false}
+                                    smooth={true}
+                                    // offset={item.offset}
+                                    duration={1500}
+                                // onClick={() => closeMenu(true)}
+                                >
+                                    Membership
+                                </Link>
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Testimonials</a>
+                            <a href="">
+                                <Link
+                                    activeClass="active"
+                                    to={'footer__contact__testimonials-title'}
+                                    spy={false}
+                                    smooth={true}
+                                    // offset={item.offset}
+                                    duration={1500}
+                                // onClick={() => closeMenu(true)}
+                                >
+                                    Testimonials
+                                </Link>
+                            </a>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <a href="">
+                                <Link
+                                    activeClass="active"
+                                    to={'footer__contact-text'}
+                                    spy={false}
+                                    smooth={true}
+                                    // offset={item.offset}
+                                    duration={1500}
+                                // onClick={() => closeMenu(true)}
+                                >
+                                    Contact
+                                </Link>
+                            </a>
                         </li>
                     </ul>
                 </div>

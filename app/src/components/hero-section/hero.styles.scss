@@ -7,7 +7,6 @@
     align-items: center;
     background-position: center bottom;
     background-size: 70vw;
-    margin-top: -60px;
 
     &__image {
         margin: 35px 0 0 0;
@@ -59,6 +58,8 @@
         height: 500px;
         width: 100vw;
         padding: 0 100px;
+        margin-top: -60px;
+
 
 
         &__image {
@@ -102,6 +103,7 @@
     .hero-homepage {
         height: 620px;
         padding: 0 150px;
+        z-index: 1;
 
 
         &__image {
