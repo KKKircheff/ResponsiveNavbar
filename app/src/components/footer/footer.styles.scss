@@ -1,5 +1,5 @@
 @import '../../css-styles/colors.scss';
-@import '../../fonts/tango-sans.scss';
+@import '../../fonts/montserat.scss';
 
 .footer {
     color: $color-white;
@@ -21,16 +21,16 @@
         }
 
         &__testimonials-title {
-            font-family: 'TangoSans', sans-serif;
+            font-family: 'Geologica', sans-serif;
             font-size: 25px;
-            font-weight: 400;
+            font-weight: 600;
         }
 
         &-text {
             h1 {
-                font-family: 'TangoSans', sans-serif;
+                font-family: 'Geologica', sans-serif;
                 font-size: 25px;
-                font-weight: 400;
+                font-weight: 600;
                 line-height: 1.5rem;
             }
 
@@ -70,10 +70,11 @@
         &__quote {
 
             h1 {
-                // font-family: 'TangoSans', sans-serif;
+                font-family: 'Geologica', sans-serif;
                 font-size: 13px;
-                font-weight: 500;
+                font-weight: 300;
                 line-height: 1.5rem;
+                padding-bottom: 10px;
             }
 
             p {
@@ -110,7 +111,7 @@
             h1 {
                 // font-family: 'TangoSans', sans-serif;
                 font-size: 13px;
-                font-weight: 500;
+                font-weight: 400;
                 line-height: 1.5rem;
             }
 
@@ -147,7 +148,12 @@
 @media only screen and (min-width: 720px) {
     .footer {
         &__contact {
-            padding-left: 50px;
+            padding-left: 100px;
+
+            &__testimonials-title {
+                font-size: 45px;
+                ;
+            }
 
             &-text {
                 h1 {
@@ -178,8 +184,8 @@
         }
 
         &__block {
-            padding-left: 50px;
-            padding-right: 50px;
+            padding-left: 100px;
+            padding-right: 100px;
 
             &__quote {
 

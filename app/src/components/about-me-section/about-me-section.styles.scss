@@ -1,5 +1,5 @@
 @import '../../css-styles/colors.scss';
-@import '../../fonts/tango-sans.scss';
+@import '../../fonts/montserat.scss';
 
 .about-me-section {
     display: flex;
@@ -9,19 +9,32 @@
     background-position: bottom center;
 
     &__slider {
+        align-self: flex-start;
+        margin: 0 35px;
         color: $color-white;
         width: 270px;
     }
 }
 
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 720px) {
+
+    .about-me-section {
+        padding-left: 70px;
+
+        // background-size: contain;
+    }
+
+
+}
+
+@media only screen and (min-width: 960px) {
 
     .about-me-section {
         flex-direction: row;
         // background-size: contain;
         padding: 40px 20px 40px 20px;
-        padding-left: calc(32vw - 280px);
-        background-position: 90% center;
+        padding-left: 150px;
+        background-position: 87% center;
         height: 650px;
     }
 

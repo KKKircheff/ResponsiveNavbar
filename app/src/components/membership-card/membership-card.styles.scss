@@ -1,5 +1,5 @@
 @import '../../css-styles/colors.scss';
-@import '../../fonts/tango-sans.scss';
+@import '../../fonts/montserat.scss';
 
 
 
@@ -7,17 +7,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 271px;
+    width: 250px;
     height: 413px;
     border-radius: 12px;
     background-color: $color-eerie-black;
     color: $color-white;
+    padding: 0 1px;
 
     &__title {
         padding: 15px 0;
         font-size: 30px;
-        font-family: 'tangoSans', sans-serif;
-        font-weight: 400;
+        font-family: 'Geologica', sans-serif;
+        font-weight: 600;
     }
 
     &__price-block {
@@ -56,7 +57,7 @@
 
 }
 
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 960px) {
     .membership-card {
         width: 300px;
         height: 420px;

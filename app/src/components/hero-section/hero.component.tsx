@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '../button/button.component';
 // import circles from '../../assets/MiddleBalls.png';
 import circles from '../../assets/MiddleBalls.svg';
-import hero from '../../assets/Hero-homepage-1.png';
+import hero from '../../assets/Hero-homepage-2.png';
 import balls from '../../assets/Balls.png';
 import './hero.styles.scss';
 
@@ -44,7 +44,10 @@ export const Hero = () => {
                 <p className="hero-homepage__card__text">Unleash your potential. Start your fitness journey with me now.</p>
 
                 <div className="hero-homepage__card__button">
-                    <Button buttonType="inverted" onClick={getStarted}>
+                    <Button
+                        buttonType="inverted"
+                        onClick={getStarted}
+                        style={{ fontSize: 17 }}>
                         Get started
                     </Button>
                 </div>

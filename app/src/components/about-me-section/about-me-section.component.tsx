@@ -25,12 +25,12 @@ const infoCards = [
 
 export const AboutMeSection = () => {
     const [isLargeScreen, setIsLargeScreen] = useState(false);
-    const backgroundImage = window.innerWidth >= 920 ? heroRight : heroRightMobile;
+    const backgroundImage = window.innerWidth >= 960 ? heroRight : heroRightMobile;
 
 
     useEffect(() => {
         const handleResize = () => {
-            setIsLargeScreen(window.innerWidth >= 920);
+            setIsLargeScreen(window.innerWidth >= 960);
         };
 
         // Add event listener for window resize
@@ -50,6 +50,9 @@ export const AboutMeSection = () => {
                 backgroundImage: `url(${backgroundImage})`,
                 backgroundRepeat: `no-repeat`,
             }}>
+            <div>
+                <h1> </h1>
+            </div>
             {isLargeScreen
                 ? <div className="about-me-section__card">
                     <AboutMeCard />

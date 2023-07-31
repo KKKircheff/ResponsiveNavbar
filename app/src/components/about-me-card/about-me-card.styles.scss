@@ -1,21 +1,21 @@
 @import '../../css-styles/colors.scss';
-@import '../../fonts/tango-sans.scss';
+@import '../../fonts/montserat.scss';
 
 .about-me-card {
     width: 500px;
 
     &__above-title {
-        font-family: 'tangoSans', sans-serif;
+        font-family: 'Geologica', sans-serif;
         font-size: 30px;
         color: $color-dim-gray;
-        font-weight: 600;
+        font-weight: 700;
     }
 
     &__title {
-        font-family: 'tangoSans', sans-serif;
+        font-family: 'Geologica', sans-serif;
         font-size: 45px;
         color: $color-white;
-        font-weight: 400;
+        font-weight: 600;
         line-height: 2.5rem;
         margin-bottom: 35px;
     }

@@ -3,9 +3,11 @@
 
 .main-navbar {
     font-family: 'Montserrat', sans-serif;
-    background: $color-black;
+    background: transparent;
     display: flex;
     flex-direction: column;
+    z-index: 3;
+
 
     a {
         color: $color-white;
@@ -29,15 +31,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 10px 40px 10px 40px;
-    margin-top: 20px;
+    padding: 10px 45px 10px 35px;
     min-height: 60px;
 
     &__logo {
         color: $color-white;
         font-size: 2rem;
-        // margin: 5px 0;
 
         img {
             height: 17px;
@@ -166,16 +165,28 @@
 
 @media (min-width: 720px) {
     .main-navbar {
+        width: 100vw;
         flex-direction: row;
         justify-content: space-between;
-        padding-right: 30px;
-        padding-left: 10px;
-        padding-top: 40px;
-
+        padding: 0 100px;
+        gap: 0px;
     }
 
     .navbar-container {
-        margin-top: 0px;
+        padding: 10px 0px 10px 0px;
+
+        &__logo {
+            color: $color-white;
+            font-size: 2rem;
+            width: 35px;
+            margin: 0;
+            padding: 0;
+
+            img {
+                height: 17px;
+                width: 35px;
+            }
+        }
 
         &__hamburger {
             display: none;
@@ -187,13 +198,14 @@
             align-items: center;
             overflow: visible;
             gap: 0px;
+            background-color: transparent;
 
             li {
 
                 a,
                 span {
                     white-space: nowrap;
-                    padding: 5px;
+                    padding: 5px 0;
                     color: $color-white;
                     text-decoration: none;
 
@@ -245,7 +257,12 @@
 }
 
 @media (min-width: 920px) {
+    .main-navbar {
+        padding: 0 150px;
+    }
+
     .navbar-container {
+
         &__menu {
             gap: 25px;
         }

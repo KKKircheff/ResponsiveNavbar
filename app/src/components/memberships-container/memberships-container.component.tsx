@@ -65,7 +65,7 @@ export const MembershipsContainer = () => {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsLargeScreen(window.innerWidth >= 920);
+            setIsLargeScreen(window.innerWidth >= 960);
         };
 
         // Add event listener for window resize
@@ -85,7 +85,9 @@ export const MembershipsContainer = () => {
             {isLargeScreen
                 ? <div className="memberships-container__tiers">
                     {subscriptions.map((subscription, index) => {
-                        return <MembershipCard key={index} subscription={subscription} />
+                        return <div key={index * 11}>
+                            <MembershipCard key={index} subscription={subscription} />
+                        </div>
                     }
                     )}
                 </div>
@@ -93,7 +95,7 @@ export const MembershipsContainer = () => {
                     <Slider {...settings}>
                         {subscriptions.map((subscription, index) => {
                             return (
-                                <div key={index}>
+                                <div key={index * 5} className="memberships-container__mobile__slide">
                                     <MembershipCard key={index} subscription={subscription} />
                                 </div>
                             )
