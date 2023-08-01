@@ -34,7 +34,7 @@ type Props = {
 }
 
 
-export const ContactForm = ({ setIsContactActive }: Props) => {
+export const ContactForm = () => {
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore();
@@ -94,7 +94,6 @@ export const ContactForm = ({ setIsContactActive }: Props) => {
         alert('Message received will contact you as soon as possible!!!')
 
         clearFormFields();
-        setIsContactActive(false);
     }
 
     return (

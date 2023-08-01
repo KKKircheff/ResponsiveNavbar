@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css'
 
 import rightArrow from '../../assets/rightArrow.svg'
 import leftArrow from '../../assets/leftArrow.svg'
+import { subscriptions } from '../../application-data/subscriptions-data';
 
 export const MembershipsContainer = () => {
     const settings = {
@@ -34,32 +35,7 @@ export const MembershipsContainer = () => {
         // autoplaySpeed: 1000,
     };
 
-    const subscriptions = [
-        {
-            type: 'BASIC',
-            price: 75,
-            options: ['Nutritional Guidance',
-                'Nutritional Guidance',
-                'Nutritional Guidance test',
-                'Nutritional Guidance'],
-        },
-        {
-            type: 'PREMIUM',
-            price: 150,
-            options: ['Nutritional Guidance',
-                'Nutritional Guidance',
-                'Nutritional Guidance',
-                'Nutritional Guidance'],
-        },
-        {
-            type: 'ADVANCED',
-            price: 300,
-            options: ['Nutritional Guidance',
-                'Nutritional Guidance',
-                'Nutritional Guidance',
-                'Nutritional Guidance'],
-        },
-    ]
+
 
     const [isLargeScreen, setIsLargeScreen] = useState(false);
 

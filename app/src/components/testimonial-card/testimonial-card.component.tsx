@@ -1,17 +1,27 @@
 import './testimonial-card.styles.scss'
 import stars from '../../assets/Stars.svg'
-import heroImage from '../../assets/Testimonial-hero-image.png'
+import img1 from '../../assets/Testimonial_0.png'
+import img2 from '../../assets/Testimonial_1.png'
+import img3 from '../../assets/Testimonial_2.png'
+import { Testimonials } from '../../application-data/testimonials-data'
+
+type Props = {
+    card: Testimonials
+}
 
 
-export const TestimonialCard = () => {
-
-    const testimonial = [{
-        name: 'Michael S.',
-        status: 'Premium',
-        review: 'A top-notch personal trainer, delivering impressive results. Improved physique!',
-        stars: 5,
-        photoUrl: ''
-    }]
+export const TestimonialCard = ({ card }: Props) => {
+    let heroImage = ''
+    switch (card.photoUrl) {
+        case '3':
+            heroImage = img3;
+            break;
+        case '2':
+            heroImage = img2;
+            break;
+        default:
+            heroImage = img1;
+    }
 
     return (
         <div className="testimonial-card">
@@ -21,15 +31,15 @@ export const TestimonialCard = () => {
                 </div>
                 <div className="testimonial-card__head__title">
                     <div className="testimonial-card__head__title-name">
-                        <p>{testimonial[0].name}</p>
+                        <p>{card.name}</p>
                     </div>
                     <div className="testimonial-card__head__title-status">
-                        <p>{testimonial[0].status}</p>
+                        <p>{card.status}</p>
                     </div>
                 </div>
             </div>
             <div className="testimonial-card__text-content">
-                <p>{testimonial[0].review}</p>
+                <p>{card.review}</p>
             </div>
             <div className="testimonial-card__stars">
                 <img src={stars} alt="" />

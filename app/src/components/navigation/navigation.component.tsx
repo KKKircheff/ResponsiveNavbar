@@ -9,11 +9,9 @@ import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } f
 
 interface NavigationProps {
     items: Item[];
-    isContactActive: boolean,
-    setIsContactActive: (newValue: boolean) => void;
 }
 
-const Navigation = ({ items, isContactActive, setIsContactActive }: NavigationProps) => {
+const Navigation = ({ items }: NavigationProps) => {
 
     const [isToggled, setIsToggled] = useState(false);
     const [closeSubMenu, setCloseSubMenu] = useState(false);
@@ -40,7 +38,6 @@ const Navigation = ({ items, isContactActive, setIsContactActive }: NavigationPr
                     duration={index * 200}
                     onClick={() => {
                         closeMenu(true);
-                        setIsContactActive(false)
                     }}
                 >
                     {item.name}
@@ -114,7 +111,6 @@ const Navigation = ({ items, isContactActive, setIsContactActive }: NavigationPr
                             duration={1000}
                             onClick={() => {
                                 closeMenu(true);
-                                setIsContactActive(true)
                             }}
                         >
                             {'Contact'}

@@ -6,10 +6,7 @@ import './home.styles.scss'
 import { Outlet } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 
-type Props = {
-    isContactActive: boolean,
-    setIsContactActive: (newValue: boolean) => void;
-}
+
 
 import { firebaseConfig } from '../../application-data/firebase-config';
 import { initializeApp } from 'firebase/app';
@@ -22,7 +19,7 @@ const imageRefCircles = ref(storage, '/images/MiddleBalls.svg');
 const imageRefBalls = ref(storage, '/images/Balls.png');
 const imageRefAboutMe = ref(storage, '/images/AboutMFinalEditSM.png');
 
-const Home = ({ isContactActive, setIsContactActive }: Props) => {
+const Home = () => {
 
     const [heroImageUrl, setHeroImageUrl] = useState('');
     const [circlesImageUrl, setCirclesImageUrl] = useState('');
@@ -58,7 +55,7 @@ const Home = ({ isContactActive, setIsContactActive }: Props) => {
                     />
                     <AboutMeSection aboutMeImageUrl={aboutMeImageUrl} />
                     <MembershipsContainer />
-                    <Footer isContactActive={isContactActive} setIsContactActive={setIsContactActive} />
+                    <Footer />
                 </>
                 : ''
             }
