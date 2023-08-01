@@ -1,6 +1,9 @@
 import { Button } from '../button/button.component'
 import './membership-card.styles.scss'
 import check from '../../assets/check.svg';
+
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 type Props = {
     subscription: {
         type: string,
@@ -35,7 +38,16 @@ export const MembershipCard = ({ subscription }: Props) => {
                     onClick={getStarted}
                     style={{ width: 200, height: 45, fontSize: 17 }}
                 >
-                    Get started
+                    <Link
+                        activeClass="active"
+                        to={'footer__contact-text'}
+                        spy={false}
+                        smooth={true}
+                        duration={800}
+                    // onClick={() => setIsContactActive(true)}
+                    >
+                        Get started
+                    </Link>
                 </Button>
             </div>
         </div>

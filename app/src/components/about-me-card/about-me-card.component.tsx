@@ -2,6 +2,8 @@ import { Button } from '../button/button.component'
 import './about-me-card.styles.scss'
 import buttonArrow from '../../assets/buttonArrow.svg'
 import { InfoCard } from '../info-card/info-card.component'
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 const infoCards = [
     {
@@ -33,7 +35,20 @@ export const AboutMeCard = () => {
                 })}
             </div>
             <div className="about-me-card__button">
-                <Button >Contact me <span><img src={buttonArrow} alt="" /></span></Button>
+                <Button >
+                    <Link
+                        className='about-me-card__button'
+                        activeClass="active"
+                        to={'footer__contact-text'}
+                        spy={false}
+                        smooth={true}
+                        duration={800}
+                    // onClick={() => setIsContactActive(true)}
+                    >
+                        Contact me <span><img src={buttonArrow} alt="" /></span>
+                    </Link>
+                </Button>
+
             </div>
         </div>
     )

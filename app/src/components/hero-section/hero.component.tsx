@@ -5,6 +5,8 @@ import circles from '../../assets/MiddleBalls.svg';
 import hero from '../../assets/Hero-homepage-2.png';
 import balls from '../../assets/Balls.png';
 import './hero.styles.scss';
+import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+
 
 export const Hero = () => {
     const [isLargeScreen, setIsLargeScreen] = useState(false);
@@ -48,7 +50,16 @@ export const Hero = () => {
                         buttonType="inverted"
                         onClick={getStarted}
                         style={{ fontSize: 17 }}>
-                        Get started
+                        <Link
+                            activeClass="active"
+                            to={'footer__contact-text'}
+                            spy={false}
+                            smooth={true}
+                            duration={800}
+                        // onClick={() => setIsContactActive(true)}
+                        >
+                            Get started
+                        </Link>
                     </Button>
                 </div>
             </div>
