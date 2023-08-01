@@ -25,9 +25,13 @@ const infoCards = [
     },
 ]
 
-export const AboutMeSection = () => {
+type Props = {
+    aboutMeImageUrl: string;
+}
+
+export const AboutMeSection = ({ aboutMeImageUrl }: Props) => {
     const [isLargeScreen, setIsLargeScreen] = useState(false);
-    const backgroundImage = window.innerWidth >= 960 ? heroRight : heroRightMobile;
+
 
 
     useEffect(() => {
@@ -49,7 +53,7 @@ export const AboutMeSection = () => {
     return (
         <div className='about-me-section'
             style={{
-                backgroundImage: `url(${backgroundImage})`,
+                backgroundImage: `url(${aboutMeImageUrl})`,
                 backgroundRepeat: `no-repeat`,
             }}>
             <div>
