@@ -1,8 +1,10 @@
 import { AboutMeCard } from '../about-me-card/about-me-card.component'
 import './about-me-section.styles.scss'
 import { useEffect, useState } from 'react';
-import heroRight from '../../assets/HeroRight.png'
-import heroRightMobile from '../../assets/HeroRightmobile.png'
+// import heroRight from '../../assets/HeroRight.png'
+// import heroRightMobile from '../../assets/HeroRightmobile.png'
+import heroRight from '../../assets/AboutMFinalEditSM.png'
+import heroRightMobile from '../../assets/AboutMFinalEditSM.png'
 import { AboutMeSlider } from '../about-me-slider/about-me-slider.component';
 const infoCards = [
     {

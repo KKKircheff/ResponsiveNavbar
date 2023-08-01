@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Button } from '../button/button.component';
-// import circles from '../../assets/MiddleBalls.png';
 import circles from '../../assets/MiddleBalls.svg';
-import hero from '../../assets/Hero-homepage-2.png';
+// import hero from '../../assets/Hero-homepage-2.png';
+import hero from '../../assets/HomepageFinalEditSM.png';
 import balls from '../../assets/Balls.png';
 import './hero.styles.scss';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
