@@ -1,13 +1,11 @@
 import React from 'react';
 import { Item } from '../../application-data/navbar-config'
 import { Outlet } from 'react-router-dom';
-import { Link as LinkNav } from 'react-router-dom';
 import { useState } from 'react';
 import './navigation.style.scss'
 import { FaAngleDown } from 'react-icons/fa'
 import logo from '../../assets/logo-s.png';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-
 
 interface NavigationProps {
     items: Item[];
@@ -35,9 +33,11 @@ const Navigation = ({ items, isContactActive, setIsContactActive }: NavigationPr
                     activeClass="active"
                     to={item.url}
                     spy={false}
-                    smooth={true}
+                    // smooth={true}
+                    delay={0}
+                    smooth={'linear'}
                     offset={item.offset}
-                    duration={index * 400}
+                    duration={index * 200}
                     onClick={() => {
                         closeMenu(true);
                         setIsContactActive(false)
@@ -107,9 +107,11 @@ const Navigation = ({ items, isContactActive, setIsContactActive }: NavigationPr
                             activeClass="active"
                             to={'footer__contact-text'}
                             spy={false}
-                            smooth={true}
+                            // smooth={true}
                             offset={-100}
-                            duration={1600}
+                            delay={0}
+                            smooth={'linear'}
+                            duration={1000}
                             onClick={() => {
                                 closeMenu(true);
                                 setIsContactActive(true)

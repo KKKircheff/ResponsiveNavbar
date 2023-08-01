@@ -86,8 +86,10 @@ export const Footer = ({ isContactActive, setIsContactActive }: Props) => {
                                     activeClass="active"
                                     to={'about-me-section'}
                                     spy={false}
-                                    smooth={true}
-                                    duration={1500}
+                                    // smooth={true}
+                                    delay={0}
+                                    smooth={'linear'}
+                                    duration={800}
                                     onClick={() => setIsContactActive(false)}
                                 >
                                     About me
@@ -100,8 +102,10 @@ export const Footer = ({ isContactActive, setIsContactActive }: Props) => {
                                     activeClass="active"
                                     to={'memberships-container'}
                                     spy={false}
-                                    smooth={true}
-                                    duration={1000}
+                                    // smooth={true}
+                                    delay={0}
+                                    smooth={'linear'}
+                                    duration={600}
                                     onClick={() => setIsContactActive(false)}
                                 >
                                     Membership
@@ -114,8 +118,10 @@ export const Footer = ({ isContactActive, setIsContactActive }: Props) => {
                                     activeClass="active"
                                     to={'footer__contact__testimonials-title'}
                                     spy={false}
-                                    smooth={true}
-                                    duration={500}
+                                    // smooth={true}
+                                    delay={0}
+                                    smooth={'linear'}
+                                    duration={400}
                                     onClick={() => setIsContactActive(false)}
 
                                 >
@@ -129,8 +135,10 @@ export const Footer = ({ isContactActive, setIsContactActive }: Props) => {
                                     activeClass="active"
                                     to={'footer__contact-text'}
                                     spy={false}
-                                    smooth={true}
-                                    duration={800}
+                                    // smooth={true}
+                                    delay={0}
+                                    smooth={'linear'}
+                                    duration={200}
                                     onClick={() => setIsContactActive(true)}
                                 >
                                     Contact

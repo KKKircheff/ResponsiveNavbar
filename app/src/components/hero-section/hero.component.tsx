@@ -52,9 +52,10 @@ export const Hero = () => {
                         style={{ fontSize: 17 }}>
                         <Link
                             activeClass="active"
-                            to={'footer__contact-text'}
+                            to={'memberships-container'}
                             spy={false}
                             smooth={true}
+                            offset={120}
                             duration={800}
                         // onClick={() => setIsContactActive(true)}
                         >
