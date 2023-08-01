@@ -1,20 +1,18 @@
 @import '../../css-styles/colors.scss';
 @import '../../fonts/montserat.scss';
 
-$color-primary-0: white;
-$color-primary-2: red;
+$color-primary-0: $color-white;
+$color-primary-2: $color-dim-gray;
 
 .contact-form-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 60px 50px;
+    width: 100%;
+    margin: 60px 0px;
     padding: 0px;
 
     h2 {
-        font-size: calc(2rem + 1vw);
+        font-size: 25px;
+        font-family: 'Geologica', sans-serif;
+        font-weight: 600;
         margin: 10px 0px;
         color: $color-primary-0;
     }
@@ -32,15 +30,16 @@ $color-primary-2: red;
 .form-error-message {
     width: 100%;
     border: 1px solid red;
+    border-radius: 8px;
     color: red;
     font-weight: 500;
     padding: 10px;
-    margin: 10px 0;
+    margin: 30px 0;
 }
 
 @media only screen and (min-width: 781px) {
     .contact-form-container {
-        width: 66%;
+        width: 100%;
     }
 
     .form-error-message {

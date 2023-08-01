@@ -161,7 +161,7 @@ export const ContactForm = ({ isContactActive, setIsContactActive }: Props) => {
                     value={formValues.message}
                 />
 
-                <div className="buttons-container">
+                <div className="contact-form-container__buttons-container">
                     <Button type='submit'>Send</Button>
                 </div>
                 {!isFormValid && <div className="form-error-message">{errorMessage}</div>}
