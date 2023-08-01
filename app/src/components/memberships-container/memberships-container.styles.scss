@@ -25,10 +25,18 @@
     }
 
     &__mobile {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-top: 50px;
-        padding-left: 3px;
-        width: 265px;
-        height: 413px;
+        padding-left: 13px;
+
+        &-container {
+
+            width: 265px;
+            height: 413px;
+        }
 
 
     }
@@ -72,7 +80,7 @@
 }
 
 .slick-next {
-    left: 260px !important;
+    left: 258px !important;
     width: 30px;
     margin: 0;
     padding: 0;

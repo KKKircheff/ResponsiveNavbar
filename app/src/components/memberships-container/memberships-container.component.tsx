@@ -92,16 +92,18 @@ export const MembershipsContainer = () => {
                     )}
                 </div>
                 : <div className="memberships-container__mobile">
-                    <Slider {...settings}>
-                        {subscriptions.map((subscription, index) => {
-                            return (
-                                <div key={index * 5} className="memberships-container__mobile__slide">
-                                    <MembershipCard key={index} subscription={subscription} />
-                                </div>
-                            )
-                        }
-                        )}
-                    </Slider>
+                    <div className="memberships-container__mobile-container">
+                        <Slider {...settings}>
+                            {subscriptions.map((subscription, index) => {
+                                return (
+                                    <div key={index * 5} className="memberships-container__mobile__slide">
+                                        <MembershipCard key={index} subscription={subscription} />
+                                    </div>
+                                )
+                            }
+                            )}
+                        </Slider>
+                    </div>
                 </div>
             }
         </div>
