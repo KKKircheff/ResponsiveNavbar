@@ -2,8 +2,19 @@ import { FormInputField } from "./form-input-field/form-input-field.component.";
 import { FormTextArea } from "./form-text-area-field/form-text-area.component";
 import { Button } from "../button/button.component"
 import { useState } from "react";
-
+import { initializeApp } from 'firebase/app';
+import { addDoc, collection, onSnapshot, getFirestore } from 'firebase/firestore'
 import './contact-form.style.scss'
+
+const firebaseConfig = {
+    apiKEy: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_ID,
+    measurementId: import.meta.env.VITE_MEASURMENT_ID,
+};
 
 const contactInfo = {
     name: '',
@@ -27,11 +38,15 @@ const fieldsRegex: FieldsRegex = {
 }
 
 type Props = {
-    isContactActive: boolean,
+    isContactActive?: boolean,
     setIsContactActive: (newValue: boolean) => void;
 }
 
-export const ContactForm = ({ isContactActive, setIsContactActive }: Props) => {
+
+export const ContactForm = ({ setIsContactActive }: Props) => {
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore();
 
     const [formValues, setFormValues] = useState(contactInfo);
     const [isFormValid, setIsFormValid] = useState(true);
@@ -58,12 +73,6 @@ export const ContactForm = ({ isContactActive, setIsContactActive }: Props) => {
         });
     }
 
-    const encode = (data: any) => {
-        return Object.keys(data)
-            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-            .join("&");
-    }
-
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
@@ -85,21 +94,14 @@ export const ContactForm = ({ isContactActive, setIsContactActive }: Props) => {
             return
         }
 
-        alert('Your response is accepted!!!')
+        const emailRef = collection(db, 'emails');
+        addDoc(emailRef, { ...formValues });
+        onSnapshot(emailRef, snapshot => {
+            const emails = snapshot.docs.map(email => email.data());
+            const uiList = emails.map((email, index) => console.log(`index: ${index} email: ${email} `));
+        })
+        alert('Message received will contact you as soon as possible!!!')
 
-        // fetch(`/`, {
-        //     method: `POST`,
-        //     headers: { 'Content-Type': `application/x-www-form-urlencoded` },
-        //     body: encode({
-        //         'form-name': 'contact-form__v1',
-        //         ...formValues,
-        //     }),
-        // })
-        //     .then((response) => {
-        //         console.log(response);
-        //         alert('Your response is accepted')
-        //     })
-        //     .catch(error => alert(`Error: ${error}`))
         clearFormFields();
         setIsContactActive(false);
     }

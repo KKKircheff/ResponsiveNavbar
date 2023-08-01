@@ -53,7 +53,6 @@ const Navigation = ({ items, isContactActive, setIsContactActive }: NavigationPr
                     {item.children && renderChildren(item.children)}
                 </div>
             }
-
         </li>
 
     ))

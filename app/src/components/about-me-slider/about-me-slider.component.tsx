@@ -37,11 +37,11 @@ export const AboutMeSlider = ({ slides }: Props) => {
                                         backgroundColor: isRed ? '#f14141' : '#6C6C6C',
                                     };
                                     return (
-                                        <span
+                                        <p
                                             className="about-me-slider__separator-dash"
                                             key={innerIndex}
                                             style={separatorStyle}
-                                        ></span>
+                                        >.</p>
                                     );
                                 })}
                             </div>

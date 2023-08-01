@@ -85,9 +85,9 @@ export const MembershipsContainer = () => {
             {isLargeScreen
                 ? <div className="memberships-container__tiers">
                     {subscriptions.map((subscription, index) => {
-                        return <div key={index * 11}>
+                        return (<div key={index * 11}>
                             <MembershipCard key={index} subscription={subscription} />
-                        </div>
+                        </div>)
                     }
                     )}
                 </div>
@@ -104,10 +104,6 @@ export const MembershipsContainer = () => {
                     </Slider>
                 </div>
             }
-
-
-
-
         </div>
     )
 }

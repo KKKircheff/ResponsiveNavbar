@@ -26,7 +26,7 @@ export const MembershipCard = ({ subscription }: Props) => {
             <div className="membership-card__description-block">
                 {options.map((option, index) => {
                     return (
-                        <div key={index}>
+                        <div key={index * 7}>
                             <img src={check} alt="" />
                             <p>{option}</p>
                         </div>
