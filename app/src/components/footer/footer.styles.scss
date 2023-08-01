@@ -49,12 +49,21 @@
             line-height: 1.7rem;
             font-size: 14px;
 
-
             &__span {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 gap: 10px;
+                font-size: 21px;
+            }
+
+            img {
+                width: 17px;
+                margin-left: 2px;
+            }
+
+            span {
+                font-size: 14px;
             }
 
         }

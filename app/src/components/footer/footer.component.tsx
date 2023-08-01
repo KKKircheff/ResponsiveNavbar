@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import './footer.styles.scss'
 import background from '../../assets/testimonialsCircles.svg';
 import { AiOutlineInstagram, AiOutlineMail } from 'react-icons/ai';
-import { FaSquareFacebook, FaSquareYoutube } from 'react-icons/fa6';
-import { BsTelephone, BsTelegram } from 'react-icons/bs';
+import { FaSquareFacebook } from 'react-icons/fa6';
+// import { BsTelephone } from 'react-icons/bs';
+import phoneIcon from '../../assets/phone-icon.png'
 import { TestimonialCard } from '../testimonial-card/testimonial-card.component';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import { ContactForm } from '../../components/contact-form/contact-form.component'
@@ -51,8 +52,8 @@ export const Footer = () => {
                 <div className="footer__contact-separator"></div>
                 <div className="footer__contact-details">
                     <div className='footer__contact-details__span'><AiOutlineInstagram /> <span>sohil.elyas</span></div>
-                    <div className='footer__contact-details__span'><BsTelephone /> <span>+32 479 89 97 66</span></div>
-                    <div className='footer__contact-details__span'><AiOutlineMail /> <span>sohil.elyasv@gmail.com</span></div>
+                    <div className='footer__contact-details__span'><img src={phoneIcon} alt="phone icon" /> <span>+32 479 89 97 66</span></div>
+                    <div className='footer__contact-details__span'><AiOutlineMail /><span>sohil.elyasv@gmail.com</span></div>
                 </div>
             </div>
             <div className="footer__block">
