@@ -97,18 +97,18 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                margin-top: 10px;
 
                 gap: 14px;
 
                 a {
                     color: $color-white;
 
-                    &:first-child {
-                        margin-top: 1px;
-                        font-size: 19px;
-                    }
 
+                }
+
+                img {
+                    height: 26px;
+                    margin-top: -10px;
                 }
 
             }
@@ -158,10 +158,20 @@
     .footer {
         &__contact {
             padding-left: 100px;
+            padding-right: 100px;
+
 
             &__testimonials-title {
                 font-size: 45px;
                 ;
+            }
+
+            &__testimonials {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                // margin: 80px 0;
+                gap: 20px;
             }
 
             &-text {
@@ -179,7 +189,6 @@
 
             &-details {
                 line-height: 2.5rem;
-                font-size: 20px;
                 font-weight: 500;
 
                 &__span {
@@ -187,6 +196,10 @@
                     flex-direction: row;
                     align-items: center;
                     gap: 16px;
+
+                    span {
+                        font-size: 20px;
+                    }
                 }
 
             }

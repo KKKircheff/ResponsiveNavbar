@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import './footer.styles.scss'
 import background from '../../assets/testimonialsCircles.svg';
-import { AiOutlineInstagram, AiOutlineMail } from 'react-icons/ai';
+// import { AiOutlineInstagram, AiOutlineMail } from 'react-icons/ai';
 import { FaSquareFacebook } from 'react-icons/fa6';
 // import { BsTelephone } from 'react-icons/bs';
-import phoneIcon from '../../assets/phone-icon.png'
+import phoneIcon from '../../assets/icon-phone.png'
+import instagramIcon from '../../assets/icon-instageam.png'
+import mailIcon from '../../assets/icon-mail.png'
+
 import { TestimonialCard } from '../testimonial-card/testimonial-card.component';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 import { ContactForm } from '../../components/contact-form/contact-form.component'
@@ -31,7 +34,7 @@ export const Footer = () => {
         };
     }, []);
     return (
-        <div className='footer'>
+        <div id='contact' className='footer'>
             <div className="footer__contact" style={{
                 backgroundImage: `url(${background})`,
                 backgroundRepeat: `no-repeat`,
@@ -44,6 +47,7 @@ export const Footer = () => {
                         return <TestimonialCard key={index} card={card} />
                     })}
                 </div>
+                <div id="contact-form__anchortag"></div>
                 <ContactForm />
                 <div className="footer__contact-text">
                     <h1>Contact</h1>
@@ -51,9 +55,22 @@ export const Footer = () => {
                 </div>
                 <div className="footer__contact-separator"></div>
                 <div className="footer__contact-details">
-                    <div className='footer__contact-details__span'><AiOutlineInstagram /> <span>sohil.elyas</span></div>
-                    <div className='footer__contact-details__span'><img src={phoneIcon} alt="phone icon" /> <span>+32 479 89 97 66</span></div>
-                    <div className='footer__contact-details__span'><AiOutlineMail /><span>sohil.elyasv@gmail.com</span></div>
+                    <div className='footer__contact-details__span'>
+                        <a href="https://www.instagram.com/sohil.elyas/">
+                            <img src={instagramIcon} alt="instagram icon" />
+                        </a>
+                        <span>sohil.elyas</span>
+                    </div>
+                    <div className='footer__contact-details__span'>
+                        <img src={phoneIcon} alt="phone icon" />
+                        <span>+32 479 89 97 66</span>
+                    </div>
+                    <div className='footer__contact-details__span'>
+                        <a href="#contact-form__anchortag">
+                            <img src={mailIcon} alt="email icon" />
+                        </a>
+                        <span>sohil.elyasv@gmail.com</span>
+                    </div>
                 </div>
             </div>
             <div className="footer__block">
@@ -65,8 +82,8 @@ export const Footer = () => {
                         : <p>Transform your body and unlock your fitness potential</p>
                     }
                     <div className="footer__block__quote__icons">
-                        <a href="#"><AiOutlineInstagram /></a>
-                        <a href="#"><FaSquareFacebook /></a>
+                        <a href="https://www.instagram.com/sohil.elyas/"><img src={instagramIcon} alt="" /></a>
+                        <a href=" https://www.facebook.com/sohil.khazael/"><FaSquareFacebook /></a>
                         {/* <a href="#"><BsTelegram /></a> */}
                         {/* <a href="#"><FaSquareYoutube /></a> */}
                     </div>

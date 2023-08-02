@@ -37,7 +37,7 @@ export const Hero = ({ ballsImageUrl, circlesImageUrl, heroImageUrl }: Props) =>
 
     return (
         <>
-            {background && <div className="hero-homepage"
+            {background && <div className="hero-homepage" id='hero-homepage'
                 style={{
                     backgroundImage: `url(${background})`,
                     backgroundRepeat: `no-repeat`,
