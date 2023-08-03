@@ -8,7 +8,7 @@ export type Testimonials = {
 export const testimonials: Testimonials[] = [{
     name: 'Devon',
     status: 'Premium',
-    review: 'A top-notch personal trainer, delivering impressive results. Improved physique!',
+    review: 'A top-notch personal trainer, lost 5KGs in week and helped me get healthy again.',
     photoUrl: '1'
 },
 {
@@ -20,7 +20,7 @@ export const testimonials: Testimonials[] = [{
 {
     name: 'Toni',
     status: 'Premium',
-    review: 'Been training my whole life but Sohil still brought me to another level. Amazing guy.',
+    review: 'Been training my whole life but Sohil still found a way to level me up. Amazing personal trainer.',
     photoUrl: '3'
 },
 

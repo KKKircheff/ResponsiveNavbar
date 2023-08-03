@@ -108,7 +108,7 @@ export const ContactForm = () => {
             >
                 <input type="hidden" name="form-name" value='contact-form' />
                 <FormInputField
-                    label='First and Familiy Names '
+                    label='Full Na:me'
                     type='text'
                     name='name'
                     autoComplete='off'
@@ -126,7 +126,7 @@ export const ContactForm = () => {
                 /> */}
 
                 <FormInputField
-                    label='Phone number:'
+                    label='Phone Number:'
                     type='text'
                     name='phonenumber'
                     autoComplete='off'
@@ -135,7 +135,7 @@ export const ContactForm = () => {
                 />
 
                 <FormInputField
-                    label='Email'
+                    label='Email:'
                     type='email'
                     name='email'
                     autoComplete='off'

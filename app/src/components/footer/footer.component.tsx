@@ -58,8 +58,8 @@ export const Footer = () => {
                     <div className='footer__contact-details__span'>
                         <a href="https://www.instagram.com/sohil.elyas/">
                             <img src={instagramIcon} alt="instagram icon" />
+                            <span>sohil.elyas</span>
                         </a>
-                        <span>sohil.elyas</span>
                     </div>
                     <div className='footer__contact-details__span'>
                         <img src={phoneIcon} alt="phone icon" />
@@ -68,8 +68,8 @@ export const Footer = () => {
                     <div className='footer__contact-details__span'>
                         <a href="#contact-form__anchortag">
                             <img src={mailIcon} alt="email icon" />
+                            <span>sohil.elyasv@gmail.com</span>
                         </a>
-                        <span>sohil.elyasv@gmail.com</span>
                     </div>
                 </div>
             </div>

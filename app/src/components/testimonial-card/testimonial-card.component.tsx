@@ -1,8 +1,7 @@
 import './testimonial-card.styles.scss'
 import stars from '../../assets/Stars.svg'
-import img1 from '../../assets/Testimonial_0.png'
-import img2 from '../../assets/Testimonial_1.png'
-import img3 from '../../assets/Testimonial_2.png'
+import heroImage from '../../assets/testimonials-pfp.png'
+
 import { Testimonials } from '../../application-data/testimonials-data'
 
 type Props = {
@@ -11,17 +10,6 @@ type Props = {
 
 
 export const TestimonialCard = ({ card }: Props) => {
-    let heroImage = ''
-    switch (card.photoUrl) {
-        case '3':
-            heroImage = img3;
-            break;
-        case '2':
-            heroImage = img2;
-            break;
-        default:
-            heroImage = img1;
-    }
 
     return (
         <div className="testimonial-card">

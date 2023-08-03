@@ -55,6 +55,17 @@
                 align-items: center;
                 gap: 10px;
                 font-size: 21px;
+
+                a {
+                    display: flex;
+                    text-decoration: none;
+                    flex-direction: row;
+                    align-items: center;
+                    gap: 12px;
+                    height: 17px;
+                    color: $color-white;
+
+                }
             }
 
             img {
@@ -97,19 +108,23 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-
+                margin-top: 10px;
                 gap: 14px;
 
                 a {
                     color: $color-white;
 
+                    &:first-child {
+                        margin-top: 4px;
+                        font-size: 2.2rem;
+                    }
 
+                    img {
+                        height: 15px;
+                        margin-top: -10px;
+                    }
                 }
 
-                img {
-                    height: 26px;
-                    margin-top: -10px;
-                }
 
             }
         }
@@ -200,6 +215,10 @@
                     span {
                         font-size: 20px;
                     }
+
+                    a {
+                        gap: 16px;
+                    }
                 }
 
             }
@@ -230,10 +249,16 @@
                     a {
                         color: $color-white;
 
-                        &:first-child {
-                            margin-top: 4px;
-                            font-size: 2.2rem;
+
+                        img {
+                            height: 26px;
+                            margin-top: -10px;
                         }
+
+                        // &:first-child {
+                        //     margin-top: 4px;
+                        //     font-size: 2.2rem;
+                        // }
 
                     }
                 }

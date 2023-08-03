@@ -1,10 +1,13 @@
 import React from 'react';
+import { useEffect } from 'react';
 import { Item } from '../../application-data/navbar-config'
 import { Outlet } from 'react-router-dom';
 import { useState } from 'react';
 import './navigation.style.scss'
 import { FaAngleDown } from 'react-icons/fa'
-import logo from '../../assets/logo-s.png';
+// import logo from '../../assets/logo-s.png';
+import logo from '../../assets/logo-xsofit.png';
+import logoMobile from '../../assets/logo-xsofit-mobile.png';
 import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
 
 interface NavigationProps {
@@ -15,10 +18,27 @@ const Navigation = ({ items }: NavigationProps) => {
 
     const [isToggled, setIsToggled] = useState(false);
     const [closeSubMenu, setCloseSubMenu] = useState(false);
-
+    const [isLargeScreen, setIsLargeScreen] = useState(false);
     const screenSizes = {
         small: 720
     }
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsLargeScreen(window.innerWidth >= 960);
+        };
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Call handleResize to set initial value
+        handleResize();
+
+        // Clean up the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     const toggleSubMenu = (event: React.MouseEvent<HTMLSpanElement, MouseEvent>) => {
         event.currentTarget.classList.toggle('navbar-container__menu-sub-menu--toggled');
@@ -74,12 +94,19 @@ const Navigation = ({ items }: NavigationProps) => {
         }
     }
 
+
+
     return (
         <>
             <nav className='main-navbar'>
                 <div className="navbar-container">
                     <div className="navbar-container__logo">
-                        <img src={logo} alt="Company logo" />
+                        {isLargeScreen
+                            ? <img src={logo} alt="Company logo" />
+                            : <img src={logoMobile} alt="Company logo" />
+                        }
+
+
                         {/* <FaReact /><span> + </span><TbBrandTypescript /> */}
                     </div>
                     <div
