@@ -1,0 +1,98 @@
+@import '../../css-styles/colors.scss';
+@import '../../fonts/montserat.scss';
+
+
+
+.membership-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
+    height: 413px;
+    border-radius: 12px;
+    background-color: $color-eerie-black;
+    color: $color-white;
+    padding: 0 1px;
+
+    &__title {
+        padding: 15px 0;
+        font-size: 30px;
+        font-family: 'Geologica', sans-serif;
+        font-weight: 600;
+    }
+
+    &__price-block {
+        width: 100%;
+        background-color: $color-imperial-red;
+        text-align: center;
+        padding: 12px 0;
+
+        h1 {
+            font-family: Montserrat;
+            font-size: 50px;
+            line-height: 3rem;
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 5px;
+        }
+    }
+
+    &__description-block {
+        padding: 20px 0;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 2rem;
+        color: $color-battleship-gray;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+        }
+    }
+
+}
+
+@media only screen and (min-width: 960px) {
+    .membership-card {
+        width: 300px;
+        height: 420px;
+        transition: all .3s;
+
+        &__title {
+            font-size: 36px;
+        }
+
+        &__price-block {
+
+            h1 {
+                font-size: 60px;
+            }
+
+            p {
+                font-weight: 500;
+            }
+        }
+
+        &__description-block {
+            font-size: 18px;
+
+            div {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+            }
+        }
+
+        &:hover {
+            transform: scale(120%);
+            transition: all .3s;
+        }
+
+    }
+}

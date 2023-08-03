@@ -22,9 +22,3 @@ App.tsx
 components/Navigation.component.tsx
 components/Navigation.style.scss
 
-Feel free to clone and use the code. Happy hacking! 
-
-![image](https://github.com/KKKircheff/ResponsiveNavbar/assets/102865219/2f772222-6104-4ee9-bae7-d34cdb467357)
-
-![image](https://github.com/KKKircheff/ResponsiveNavbar/assets/102865219/776107a9-c1fb-4172-88be-a88cffebb743)
-

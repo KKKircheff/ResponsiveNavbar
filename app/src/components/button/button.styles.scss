@@ -1,0 +1,104 @@
+@import '../../css-styles/colors.scss';
+@import '../../fonts/montserat.scss';
+
+.button-container {
+    min-width: 165px;
+    height: 41px;
+    width: auto;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+    line-height: 40px;
+    padding: 0 38px 0 38px;
+    font-size: 12px;
+    background-color: $color-black-background;
+    color: $color-white;
+    // text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    border: 1px solid $color-white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .05s;
+    gap: 10px;
+
+
+    &:active {
+        background-color: $color-dim-gray;
+        color: $color-white;
+    }
+
+    &.google-sign-in {
+        background-color: $color-imperial-red;
+        color: $color-white;
+
+        &:active {
+            background-color: $color-white;
+        }
+    }
+
+    &.inverted {
+        background-color: $color-white;
+        color: $color-black-background;
+        border: 1px solid $color-black-background;
+
+        &:active {
+            background-color: $color-eerie-black;
+        }
+    }
+
+
+}
+
+@media only screen and (min-width: 720px) {
+    .button-container {
+        &:hover {
+            background-color: $color-white;
+            color: $color-black-background;
+            border: 1px solid $color-black-background;
+        }
+
+        &:active {
+            background-color: $color-dim-gray;
+            color: $color-white;
+        }
+
+
+        &.google-sign-in {
+            &:hover {
+                background-color: $color-imperial-dark-red;
+                color: $color-white;
+                border: 1px solid $color-white;
+            }
+
+            &:active {
+                background-color: $color-imperial-red;
+            }
+
+        }
+
+        &.inverted {
+            &:hover {
+                background-color: $color-black-background;
+                color: $color-white;
+                border: 1px solid $color-dim-gray;
+            }
+
+            &:active {
+                background-color: $color-dim-gray;
+            }
+
+        }
+
+    }
+}
+
+
+
+
+@media only screen and (max-width: 390px) {
+    .button-container {
+        padding: 0 5px 0 5px;
+    }
+}

@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "tangoSans";
+  src: url("TangoSans.ttf") format("truetype");
+}
+@font-face {
+  font-family: "tangoSans_b_i";
+  src: url("TangoSans_BoldItalic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "tangoSans_b";
+  src: url("TangoSans_Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "tangoSans_i";
+  src: url("TangoSans_Italic.ttf") format("truetype");
+}/*# sourceMappingURL=tango-sans.css.map */

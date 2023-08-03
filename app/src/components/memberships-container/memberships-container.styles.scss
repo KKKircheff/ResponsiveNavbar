@@ -1,0 +1,98 @@
+@import '../../css-styles/colors.scss';
+@import '../../fonts/montserat.scss';
+
+.memberships-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+
+    &__title {
+        color: $color-white;
+        font-family: 'Geologica', sans-serif;
+        margin: 30px 0;
+        font-size: 25px;
+        font-weight: 600;
+        text-align: center;
+        width: 241px;
+    }
+
+    &__tiers {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+    }
+
+    &__mobile {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+        padding-left: 13px;
+
+        &-container {
+
+            width: 265px;
+            height: 413px;
+        }
+
+
+    }
+}
+
+
+@media only screen and (min-width: 960px) {
+    .memberships-container {
+        padding: 100px;
+        margin-top: 10px;
+
+
+        &__title {
+            width: 700px;
+            font-size: 45px;
+            padding: 60px 0;
+
+        }
+
+        &__tiers {
+            width: 100%;
+            display: flex;
+            // flex-direction: row;
+            // gap: 30px;
+            // justify-content: center;
+            flex-direction: row;
+            justify-content: space-evenly;
+            margin: 80px 0;
+            gap: 20px;
+        }
+
+    }
+}
+
+.slick-prev {
+    top: 203px;
+    left: -30px !important;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-next {
+    left: 258px !important;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-next:before,
+.slick-prev:before {
+    content: "" !important;
+}
+
+.next-slick-arrow,
+.prev-slick-arrow {
+    color: white;
+    font-size: 45px;
+}
