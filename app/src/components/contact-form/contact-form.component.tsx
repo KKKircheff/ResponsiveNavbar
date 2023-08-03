@@ -108,7 +108,7 @@ export const ContactForm = () => {
             >
                 <input type="hidden" name="form-name" value='contact-form' />
                 <FormInputField
-                    label='Full Na:me'
+                    label='Full Name:'
                     type='text'
                     name='name'
                     autoComplete='off'
